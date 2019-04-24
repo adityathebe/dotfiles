@@ -28,9 +28,6 @@ export PATH=/usr/bin/robo3t/bin:$PATH
 # Anaconda
 export PATH=~/anaconda3/bin:$PATH
 
-# Chrome (For NickJS)
-export CHROME_PATH=/usr/bin/google-chrome-stable
-
 # Android Studio
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -54,14 +51,10 @@ ENABLE_CORRECTION="true"
 # Aliases #
 ###########
 
-alias ytd='youtube-dl -f bestvideo+bestaudio --prefer-free-formats -i --output "%(title)s.%(ext)s"'
-alias yta='youtube-dl -x -f bestaudio --prefer-free-formats -i --output "%(title)s.%(ext)s"'
 alias ll='ls -l'
 alias lh='ls -alF'
 alias lg='ls -alF | grep'
 alias zshconfig="nano ~/.zshrc"
-alias d="cd ~/Desktop"
-alias home="cd ~"
 alias sleep="systemctl suspend"
 alias agenda="gcalcli agenda"
 alias uli="nautilus ~/.uli &"
