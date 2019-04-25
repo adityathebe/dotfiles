@@ -28,13 +28,6 @@ export PATH=/usr/bin/robo3t/bin:$PATH
 # Anaconda
 export PATH=~/anaconda3/bin:$PATH
 
-# Android Studio
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
 
 
 ###############
@@ -62,5 +55,8 @@ alias bitcoin="~/Softwares/bitcoin-com-wallet/Bitcoin.com"
 alias electrum="~/Softwares/electrum-3.3.4-x86_64.AppImage"
 alias rss="newsboat"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias ci3b='nano ~/.i3blocks.conf'
-alias ci3='nano ~/.config/i3/config'
+alias i3bconf='nano ~/.i3blocks.conf'
+alias i3conf='nano ~/.config/i3/config'
+alias ip='curl https://api.ipify.org/'
+alias du='du -ch'
+alias df='df -h'
