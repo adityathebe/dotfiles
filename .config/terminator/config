@@ -1,0 +1,38 @@
+[global_config]
+  borderless = True
+  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  inactive_color_offset = 0.807692307692
+  suppress_multiple_term_dialog = True
+  title_hide_sizetext = True
+  title_transmit_bg_color = "#2e3436"
+[keybindings]
+  close_term = <Primary>w
+  close_window = <Primary>q
+  new_tab = <Primary>t
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
+  search = <Primary>f
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_10 = <Alt>2
+  switch_to_tab_2 = <Alt>3
+  switch_to_tab_3 = <Alt>4
+  switch_to_tab_4 = <Alt>5
+  zoom_in = <Primary>equal
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    cursor_color = "#f6f7ec"
+    font = Roboto Mono Thin for Powerline Bold 10
+    foreground_color = "#839496"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
