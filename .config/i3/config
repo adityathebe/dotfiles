@@ -54,7 +54,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggleq
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -114,7 +114,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 assign [Class="Vivaldi-stable"] $ws2
 assign [class="Code"] $ws3
 assign [class="TelegramDesktop"] $ws9
-assign [class="Lollypop"] $ws10
+assign [class="Lollypop|Audacious"] $ws10
 # =============================================================================
 
 
@@ -176,10 +176,14 @@ bar {
 # i3lock
 bindsym $mod+l exec /usr/share/i3blocks/i3lock
 
+# ============================================================================
+# Multimedia buttons
+# ============================================================================
+
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -193,6 +197,9 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+# ============================================================================
+
+
 
 # Flameshot Screenshot
 bindsym $mod+Print exec flameshot gui -p ~/Pictures/Screenshots/
@@ -205,5 +212,5 @@ bindsym Shift+Print exec flameshot full -p ~/Pictures/Screenshots/
 exec_always feh --bg-scale '/home/gunners/Pictures/best-wallpaper.jpg'
 
 # Startup Applications
-exec --no-startup-id i3-msg 'workspace $ws1; exec terminator' 
+# exec --no-startup-id i3-msg 'workspace $ws1; exec terminator' 
 exec --no-startup-id ssh-add ~/.ssh/id_rsa_github
