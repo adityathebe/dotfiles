@@ -111,6 +111,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Assign Programs to Workspaces
+assign [Class="Vivaldi-stable"] $ws2
 assign [class="Code"] $ws3
 assign [class="TelegramDesktop"] $ws9
 assign [class="Lollypop"] $ws10
