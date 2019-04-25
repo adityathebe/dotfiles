@@ -62,3 +62,5 @@ alias bitcoin="~/Softwares/bitcoin-com-wallet/Bitcoin.com"
 alias electrum="~/Softwares/electrum-3.3.4-x86_64.AppImage"
 alias rss="newsboat"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias ci3b='nano ~/.i3blocks.conf'
+alias ci3='nano ~/.config/i3/config'
