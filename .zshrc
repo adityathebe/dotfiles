@@ -9,7 +9,8 @@ plugins=(
   history
 )
 
-
+# Chrome (For NickJS)
+export CHROME_PATH=/usr/bin/google-chrome-stable
 
 ###############
 # ZSH configs #
