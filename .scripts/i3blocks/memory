@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) notify-send "$(ps eaxch -o cmd:15,rss --sort=-rss | head | awk '{$2=int($2/1024)" MB";}{ print;}')" ;;
+	2) notify-send "Right" ;;
+esac
+
+free -h --si | awk '/Mem:/ {printf("%s"), $3}'
