@@ -10,19 +10,6 @@ API_URL = 'https://api.coinbase.com/v2/prices/BTC-USD/spot'
 r = requests.get(API_URL)
 data = json.loads(r.text)
 price = float(data['data']['amount'])
-precision = 8
 
-# percentChange = float(data['percent_change_' + PRICE_CHANGE_PERIOD])
-# percentChangeFormat = '<span color="{}">{}{:.2f}%</span>'
-# if percentChange > 0: percentChangeInfo = percentChangeFormat.format('#3BB92D', '', percentChange)
-# elif percentChange == 0: percentChangeInfo = percentChangeFormat.format('#CCCCCC', '', percentChange)
-# else: percentChangeInfo = percentChangeFormat.format('#F7555E', '', percentChange)
-
-# print(('{} {:.' + str(precision) + 'f} {}').format(data['symbol'], price, percentChangeInfo)) # Full Text
-# print(('{} {:.' + str(precision) + 'f}').format(data['symbol'], price)) # Short Text
-
-displayFormat = '<span color="{}">$ {}</span>'
-print(displayFormat.format('#3BB92D', price))
-
-# if percentChange > PRICE_CHANGE_URGENT_PERCENT:
-#    exit(33)
+displayFormat = '$ {}'
+print(displayFormat.format(price))
