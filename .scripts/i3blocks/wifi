@@ -28,7 +28,7 @@ INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 #------------------------------------------------------------------------
 
 QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
-SSID=$(iw dev wlx784476c35620 link | grep SSID | cut -d " " -f 2-)
+SSID=$(iw dev $INTERFACE link | grep SSID | cut -d " " -f 2-)
 RES="$SSID $QUALITY% "
 
 #------------------------------------------------------------------------
