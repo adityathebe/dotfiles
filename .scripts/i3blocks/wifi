@@ -34,14 +34,11 @@ RES="$SSID $QUALITY% "
 #------------------------------------------------------------------------
 
 echo $RES
+echo $SSID
 
 # color
-if [[ $QUALITY -ge 80 ]]; then
-    echo "#00FF00"
-elif [[ $QUALITY -lt 80 ]]; then
-    echo "#FFF600"
-elif [[ $QUALITY -lt 60 ]]; then
-    echo "#FFAE00"
+if [[ $QUALITY -lt 15 ]]; then
+  echo "#ff0000"
 elif [[ $QUALITY -lt 40 ]]; then
-    echo "#FF0000"
+  echo "#fb4934"
 fi
