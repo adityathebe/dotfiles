@@ -6,10 +6,28 @@ import requests
 import os
 import sys
 
+TMP_DB_FILE = "/tmp/.cryptoi3block"
+
 API_URL = 'https://api.coinbase.com/v2/prices/BTC-USD/spot'
 r = requests.get(API_URL)
 data = json.loads(r.text)
 price = float(data['data']['amount'])
 
-displayFormat = '$ {}'
-print(displayFormat.format(price))
+# Read previous value for coloring
+file = open(TMP_DB_FILE, 'r')
+old_price = float(file.read())
+
+if price > old_price:
+  displayFormat = '$ {} '
+  print(displayFormat.format(price))
+  print(int(price))
+  print("#98971a")
+else:
+  displayFormat = '$ {} '
+  print(displayFormat.format(price))
+  print(int(price))
+  print("#d65d0e")
+
+# Store Previous Value
+with open(TMP_DB_FILE, 'w') as file:
+  file.write(str(price))

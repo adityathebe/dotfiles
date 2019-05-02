@@ -65,7 +65,7 @@ if [[ "${PREV_IN}" != "" ]] && [[ "${PREV_OUT}" != "" ]]; then
 
   USAGE_IN=$(FormatNumber "${DIFF_IN}")
   USAGE_OUT=$(FormatNumber "${DIFF_OUT}")
-
+k
   if [[ "${DISPLAY}" = "both" ]]; then
     echo " ${USAGE_IN}  ${USAGE_OUT}"
     echo "${USAGE_IN} : ${USAGE_OUT}"
