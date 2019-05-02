@@ -20,8 +20,6 @@ export UPDATE_ZSH_DAYS=3
 source $ZSH/oh-my-zsh.sh
 ENABLE_CORRECTION="true"
 
-
-
 ###########
 # Aliases #
 ###########
