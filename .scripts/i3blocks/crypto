@@ -14,8 +14,13 @@ data = json.loads(r.text)
 price = float(data['data']['amount'])
 
 # Read previous value for coloring
-file = open(TMP_DB_FILE, 'r')
-old_price = float(file.read())
+old_price = 0
+try:
+    file = open(TMP_DB_FILE, 'r')
+    old_price = float(file.read())
+    file.close()
+except:
+    old_price = 0
 
 if price > old_price:
   displayFormat = '$ {} '
