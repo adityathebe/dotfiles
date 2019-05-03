@@ -150,6 +150,10 @@ assign [class="Boostnote"] $ws8
 assign [class="TelegramDesktop"] $ws9
 assign [class="Lollypop|Audacious"] $ws10
 
+# Move workspaces to different screens
+bindsym $mod+Shift+greater move workspace to output HDMI-1
+bindsym $mod+Shift+less move workspace to output LVDS-1
+
 # =============================================================================
 
 # Nautlius

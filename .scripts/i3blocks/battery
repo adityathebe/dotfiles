@@ -37,7 +37,7 @@ $status = $1;
 $percent = $2;
 $full_text = "";
 if ($status eq 'Discharging') {
-    $full_text .= "⚡ $percent% ";
+  $full_text .= "⚡ $percent% ";
 } elsif ($status eq 'Charging') {
 	$full_text .= " $percent% ";
 }
@@ -55,6 +55,7 @@ print "$short_text\n";
 if ($status eq 'Discharging') {
 	if ($percent < 20) {
 		print "#FF0000\n";
+		exec("notify-send 'Please Plug in Charager' 'Charge: ${percent}'")
 	} elsif ($percent < 40) {
 		print "#FFAE00\n";
 	} elsif ($percent < 60) {
@@ -66,6 +67,6 @@ if ($status eq 'Discharging') {
 	if ($percent < 5) {
 		exit(33);
 	}
-}
+} 
 
 exit(0);

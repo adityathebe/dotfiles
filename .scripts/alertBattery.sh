@@ -9,7 +9,7 @@ do
       notify-send "Battery level above 85%" "Level: ${battery_level}% "
       sleep 20
     fi
-  else
+  elsek
     if [ $battery_level -le 20 ]; then
       notify-send "Please plug your AC adapter." "Charging: ${battery_level}%"
       sleep 20
