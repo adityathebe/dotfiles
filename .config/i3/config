@@ -194,7 +194,7 @@ bindsym $mod+r mode "resize"
 
 
 # i3lock
-bindsym $mod+x exec /usr/share/i3blocks/i3lock
+bindsym $mod+x exec ~/.scripts/i3blocks/i3lock
 
 # ============================================================================
 # Multimedia buttons
