@@ -113,6 +113,7 @@ for_window [class="Chromium|Firefox"] border pixel 1
 set $ws1 "1. "
 set $ws2 "2. "
 set $ws3 "3. "
+set $ws4 "4. "
 set $ws7 "7. " 
 set $ws8 "8. Notes"
 set $ws9 "9. "
@@ -122,7 +123,7 @@ set $ws10 "10. ♫"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace $ws7
@@ -134,7 +135,7 @@ bindsym $mod+0 workspace $ws10
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace $ws7
@@ -145,6 +146,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Assign Programs to Workspaces
 assign [Class="Vivaldi-stable"] $ws2
 assign [class="Code"] $ws3
+assign [class="vlc"] $ws4
 assign [class="Transmission-gtk"] $ws7
 assign [class="Boostnote"] $ws8
 assign [class="TelegramDesktop"] $ws9
@@ -176,10 +178,10 @@ mode "resize" {
   # Pressing right will grow the window’s width.
   # Pressing up will shrink the window’s height.
   # Pressing down will grow the window’s height.
-  bindsym j resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym l resize shrink height 10 px or 10 ppt
-  bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
 
   # same bindings, but for the arrow keys
   bindsym Left resize shrink width 10 px or 10 ppt
@@ -194,8 +196,6 @@ mode "resize" {
 
 # Resize mode
 bindsym $mod+r mode "resize"
-
-
 
 # i3lock
 bindsym $mod+x exec ~/.scripts/i3blocks/i3lock
@@ -220,11 +220,17 @@ bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
 # ===========================================================================
 
 # Flameshot Screenshot
 bindsym $mod+Print exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots/
 bindsym Shift+Print exec --no-startup-id flameshot full -p ~/Pictures/Screenshots/
+
+# Monitor key bindings
+bindsym $mod+Shift+m exec xrandr --output LVDS-1 --auto && xrandr --output LVDS-1 --primary && xrandr --output HDMI-1 --off
+# bindsym $mod+Shift+D exec xrandr --output HDMI-1 --auto && xrandr --output HDMI-1 --primary && xrandr --output LVDS-1 --off
+bindsym $mod+Shift+d exec xrandr --output LVDS-1 --auto && xrandr --output HDMI-1 --auto && xrandr --output HDMI-1 --above LVDS-1 && xrandr --output LVDS-1 --primary
 
 # =============================================================================
 # StartUp Scripts Settings
@@ -236,7 +242,5 @@ exec_always feh --bg-scale '/home/gunners/Pictures/minimalism-scenic-toon-colors
 # Startup Applications
 # exec --no-startup-id i3-msg 'workspace $ws1; exec terminator' 
 exec --no-startup-id ssh-add ~/.ssh/id_rsa_github
-
-# Compton
 exec --no-startup-id compton -f
-
+exec xrandr --output LVDS-1 --auto && xrandr --output HDMI-1 --auto && xrandr --output HDMI-1 --above LVDS-1 && xrandr --output LVDS-1 --primary

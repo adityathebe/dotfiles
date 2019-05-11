@@ -31,7 +31,7 @@ alias sleep="systemctl suspend"
 alias uli="nautilus ~/.uli &; disown"
 alias androidstudio="~/Softwares/android-studio/bin/studio.sh"
 alias bitcoin="~/Softwares/bitcoin-com-wallet/Bitcoin.com"
-alias electrum="~/Softwares/electrum-3.3.4-x86_64.AppImage"
+alias electrum="~/Softwares/electrum-3.3.5-x86_64.AppImage"
 alias rss="newsboat"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias i3bconf='vim ~/.i3blocks.conf'
