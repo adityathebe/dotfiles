@@ -30,7 +30,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 bar {
   status_command i3blocks
-  position bottom
+  position top
 
     colors {
       background $bg-color
@@ -104,7 +104,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Remove the titlebar.
-for_window [class="Chromium|Firefox"] border pixel 1
+for_window [class="Chromium|Firefox|Vivaldi-stable|Vivaldi"] border pixel 1
 
 # =============================================================================
 # Workspace Settings
@@ -237,7 +237,7 @@ bindsym $mod+Shift+d exec xrandr --output LVDS-1 --auto && xrandr --output HDMI-
 # =============================================================================
 
 # Wallpaper
-exec_always feh --bg-scale '/home/gunners/Pictures/minimalism-scenic-toon-colors-deer-sun-forest-trees-mountain.jpg'
+exec_always feh --bg-scale '/home/gunners/Pictures/current-wallpaper.jpg'
 
 # Startup Applications
 # exec --no-startup-id i3-msg 'workspace $ws1; exec terminator' 
