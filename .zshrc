@@ -39,3 +39,20 @@ alias i3conf='vim ~/.config/i3/config'
 alias ip='curl https://api.ipify.org/'
 alias du='du -ch'
 alias df='df -h'
+alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/gunners/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gunners/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gunners/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gunners/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
