@@ -40,6 +40,7 @@ alias ip='curl https://api.ipify.org/'
 alias du='du -ch'
 alias df='df -h'
 alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
+alias jp="jupyter notebook ."
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
