@@ -28,7 +28,6 @@ alias lh='ls -alF'
 alias lg='ls -alF | grep'
 alias zshconfig="vim ~/.zshrc"
 alias sleep="systemctl suspend"
-alias uli="nautilus ~/.uli &; disown"
 alias androidstudio="~/Softwares/android-studio/bin/studio.sh"
 alias bitcoin="~/Softwares/bitcoin-com-wallet/Bitcoin.com"
 alias electrum="~/Softwares/electrum-3.3.5-x86_64.AppImage"
