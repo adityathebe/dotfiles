@@ -30,8 +30,6 @@ fi
 # ENV PATHS #
 #############
  
-export PATH=/home/gunners/Softwares/electrum-3.3.4-x86_64.AppImage:$PATH
-
 # Postman
 export PATH=/usr/bin/postman:$PATH
  
