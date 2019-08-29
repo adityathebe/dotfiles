@@ -244,3 +244,4 @@ exec_always feh --bg-scale '/home/gunners/Pictures/current-wallpaper.jpg'
 exec --no-startup-id ssh-add ~/.ssh/id_rsa_github
 exec --no-startup-id compton -f
 exec xrandr --output LVDS-1 --auto && xrandr --output HDMI-1 --auto && xrandr --output HDMI-1 --above LVDS-1 && xrandr --output LVDS-1 --primary
+exec --no-startup-id redshift -l 27.625349:85.556061
