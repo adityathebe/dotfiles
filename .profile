@@ -42,12 +42,6 @@ export PATH=~/anaconda3/bin:$PATH
 # PipEnv
 export PATH=~/.local/bin:$PATH
 
-# WebStorm
-export PATH=/opt/WebStorm-192.5728.87/bin:$PATH
-
-# PyCharm
-export PATH=/opt/pycharm-2019.2/bin:$PATH
-
 # NPM Global configuration
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
