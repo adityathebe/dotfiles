@@ -41,6 +41,13 @@ alias df='df -h'
 alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
 alias jp="jupyter notebook ."
 alias cp="rsync -ah --progress"
+alias spotdl="spotdl -o .m4a -f ."
+alias yta="youtube-dl -x --audio-format mp3"
+
+# Silly apt aliases
+alias aupdate="sudo apt update"
+alias aupgrade="sudo apt upgrade"
+alias aulist="sudo apt list --upgradable"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -57,3 +64,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export GIT_EDITOR=vim
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
