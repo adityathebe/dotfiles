@@ -1,4 +1,5 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
 set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -6,83 +7,58 @@ floating_modifier $mod
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 11
+font pango:System San Francisco Display 9
 
-hide_edge_borders both
+# =============================================================================
+# Assign colors
+# =============================================================================
+set $bg            #8b2f45
+set $bg-inactive   #a0a0a0
+set $bg-urgent     #b5294a
+set $text          #eeeeec
+set $text-inactive #babdb6
 
-
-# =================================================================
-# Window & Status Bar
-# =================================================================
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #b5294a
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-
-bar {
-  status_command i3blocks
-  position top
-
-    colors {
-      background $bg-color
-      separator #757575
-      #                  border             background         text
-      focused_workspace  $bg-color          $bg-color          $text-color
-      inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-      urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-}
+set $bar           #222222
+set $seperator     #444444
+set $statusline    #888A85
 
 
 # =============================================================================
 # BindSym
 # =============================================================================
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
+
+# start Rofi (a program launcher)
+bindsym $mod+d exec rofi -show run
 
 # change focus
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+h focus left
-bindsym $mod+l focus right
-
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+h move left
-
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+apostrophe split horizontal
+bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+slash split vertical
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -91,8 +67,14 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
 # Remove the titlebar.
-for_window [class="Chromium|Firefox|Brave|Vivaldi-stable|Vivaldi"] border pixel 1
+for_window [class="Chromium|Firefox"] border pixel 1
 
 # =============================================================================
 # Workspace Settings
@@ -101,9 +83,6 @@ for_window [class="Chromium|Firefox|Brave|Vivaldi-stable|Vivaldi"] border pixel 
 set $ws1 "1. "
 set $ws2 "2. "
 set $ws3 "3. "
-set $ws4 "4. "
-set $ws7 "7. " 
-set $ws8 "8. Notes"
 set $ws9 "9. "
 set $ws10 "10. ♫"
 
@@ -111,11 +90,11 @@ set $ws10 "10. ♫"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
+bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
@@ -123,34 +102,24 @@ bindsym $mod+0 workspace $ws10
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Assign Programs to Workspaces
-# Use xprop to get the class names
 assign [Class="Vivaldi-stable"] $ws2
-assign [Class="Brave-browser"] $ws2
 assign [class="Code"] $ws3
-assign [class="java-lang-Thread"] $ws3
-assign [class="jetbrains-idea"] $ws3
-assign [class="vlc"] $ws4
-assign [class="Transmission-gtk"] $ws7
-assign [class="Boostnote"] $ws8
 assign [class="TelegramDesktop"] $ws9
 assign [class="Lollypop|Audacious"] $ws10
-
-# Move workspaces to different screens
-bindsym $mod+Shift+greater move workspace to output HDMI-1
-bindsym $mod+Shift+less move workspace to output LVDS-1
-
 # =============================================================================
 
-# reload the i3 configuration file
+
+
+# reload the configuration file
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -161,30 +130,51 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-  # These bindings trigger as soon as you enter the resize mode
+        # These bindings trigger as soon as you enter the resize mode
 
-  # Pressing left will shrink the window’s width.
-  # Pressing right will grow the window’s width.
-  # Pressing up will shrink the window’s height.
-  # Pressing down will grow the window’s height.
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym j resize grow height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
-  # same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
-  # back to normal: Enter or Escape
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 # Resize mode
 bindsym $mod+r mode "resize"
+
+# =============================================================================
+# Status bar Settings
+# =============================================================================
+bar {
+  status_command i3blocks
+	position bottom
+
+	colors {
+		background              $bar
+		separator               $seperator
+		statusline              $statusline
+		active_workspace        $bg $bg $text
+		focused_workspace       $bg-urgent $bg $text
+		inactive_workspace      $seperator $seperator $text
+		urgent_workspace        $bg-urgent $bg-urgent $text
+	}
+}
+
+# i3lock
+bindsym $mod+l exec /usr/share/i3blocks/i3lock
 
 # ============================================================================
 # Multimedia buttons
@@ -197,7 +187,7 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+indsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -206,17 +196,20 @@ bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+# ============================================================================
+
+
+
+# Flameshot Screenshot
+bindsym $mod+Print exec flameshot gui -p ~/Pictures/Screenshots/
+bindsym Shift+Print exec flameshot full -p ~/Pictures/Screenshots/
 
 # =============================================================================
 # StartUp Scripts Settings
 # =============================================================================
-
 # Wallpaper
-exec_always feh --bg-scale '/home/gunners/Pictures/current-wallpaper.jpg'
+exec_always feh --bg-scale '/home/gunners/Pictures/best-wallpaper.jpg'
 
 # Startup Applications
-exec ssh-agent zsh
+# exec --no-startup-id i3-msg 'workspace $ws1; exec terminator' 
 exec --no-startup-id ssh-add ~/.ssh/id_rsa_github
-exec --no-startup-id compton -f
-exec xrandr --output LVDS-1 --auto && xrandr --output HDMI-1 --auto && xrandr --output HDMI-1 --above LVDS-1 && xrandr --output LVDS-1 --primary
-exec --no-startup-id redshift -l 27.625349:85.556061
