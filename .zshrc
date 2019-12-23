@@ -35,7 +35,7 @@ alias rss="newsboat"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias i3bconf='vim ~/.i3blocks.conf'
 alias i3conf='vim ~/.config/i3/config'
-alias ip='curl https://api.ipify.org/'
+alias publicip='curl https://api.ipify.org/'
 alias du='du -ch'
 alias df='df -h'
 alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
@@ -69,3 +69,5 @@ export GIT_EDITOR=vim
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

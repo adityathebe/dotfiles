@@ -26,6 +26,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Default programs
+export TERMINAL="terminator"
+export BROWSER="brave"
+export FILEBROWSER="nautilus"
+
 #############
 # ENV PATHS #
 #############
