@@ -1,0 +1,25 @@
+super + Return
+	$TERMINAL
+
+super + d
+    rofi -show run -lines 5 -width 50 -font "Systme San Francisco Dispaly 15"
+
+super + n
+    $FILEBROWSER
+
+super + x
+    ~/.scripts/i3blocks/i3lock
+
+super + shift + m
+    xrandr --output LVDS-1 --auto && xrandr --output LVDS-1 --primary && xrandr --output HDMI-1 --off
+
+super + shift + d
+    xrandr --output LVDS-1 --auto && xrandr --output HDMI-1 --auto && xrandr --output HDMI-1 --above LVDS-1 && xrandr --output LVDS-1 --primary
+
+# Flameshot Screenshot
+super + Print
+    flameshot gui -p ~/Pictures/Screenshots/
+
+super + shift + Print
+    flameshot full -p ~/Pictures/Screenshots/
+
