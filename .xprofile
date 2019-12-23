@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+dunst &             # dunst for notification
+sxhkd -m 1 &		# Bind keys with sxhkd
