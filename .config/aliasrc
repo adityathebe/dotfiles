@@ -21,7 +21,7 @@ alias i3bconf='vim ~/.i3blocks.conf'
 alias i3conf='vim ~/.config/i3/config'
 
 alias rss="newsboat"
-alias publicip='curl https://api.ipify.org/'
+alias publicip='curl https://api.ipify.org/ && echo'
 alias du='du -ch'
 alias df='df -h'
 alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
@@ -33,3 +33,6 @@ alias yta="youtube-dl --add-metadata -i -x bestaudio/best"
 alias aupdate="sudo apt update"
 alias aupgrade="sudo apt upgrade"
 alias aulist="sudo apt list --upgradable"
+
+# speedtest: get a 100MB file via wget
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip"
