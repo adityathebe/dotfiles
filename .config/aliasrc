@@ -1,0 +1,33 @@
+###########
+# Aliases #
+###########
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias mv="mv -iv"
+alias cp="rsync -ah --progress"
+alias rm="rm -v"
+
+alias ls="ls -hN --color=auto --group-directories-first"
+alias ll='ls -l --color=auto --group-directories-first '
+alias lh='ls -alF --color=auto --group-directories-first'
+alias lg='ls -alF | grep'
+
+# Configs
+alias zshconfig="vim ~/.zshrc"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias i3bconf='vim ~/.i3blocks.conf'
+alias i3conf='vim ~/.config/i3/config'
+
+alias rss="newsboat"
+alias publicip='curl https://api.ipify.org/'
+alias du='du -ch'
+alias df='df -h'
+alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
+alias jp="jupyter notebook ."
+alias spotdl="spotdl -o .m4a -f ."
+alias yta="youtube-dl --add-metadata -i -x bestaudio/best"
+
+# Silly apt aliases
+alias aupdate="sudo apt update"
+alias aupgrade="sudo apt upgrade"
+alias aulist="sudo apt list --upgradable"

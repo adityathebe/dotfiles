@@ -1,3 +1,6 @@
+# Load aliases 
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+
 # Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -20,34 +23,6 @@ export UPDATE_ZSH_DAYS=3
 source $ZSH/oh-my-zsh.sh
 ENABLE_CORRECTION="true"
 
-###########
-# Aliases #
-###########
-alias ll='ls -l'
-alias lh='ls -alF'
-alias lg='ls -alF | grep'
-alias zshconfig="vim ~/.zshrc"
-alias sleep="systemctl suspend"
-alias androidstudio="~/Softwares/android-studio/bin/studio.sh"
-alias bitcoin="~/Softwares/bitcoin-com-wallet/Bitcoin.com"
-alias electrum="~/Softwares/electrum-3.3.5-x86_64.AppImage"
-alias rss="newsboat"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias i3bconf='vim ~/.i3blocks.conf'
-alias i3conf='vim ~/.config/i3/config'
-alias publicip='curl https://api.ipify.org/'
-alias du='du -ch'
-alias df='df -h'
-alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
-alias jp="jupyter notebook ."
-alias cp="rsync -ah --progress"
-alias spotdl="spotdl -o .m4a -f ."
-alias yta="youtube-dl -x --audio-format mp3"
-
-# Silly apt aliases
-alias aupdate="sudo apt update"
-alias aupgrade="sudo apt upgrade"
-alias aulist="sudo apt list --upgradable"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
