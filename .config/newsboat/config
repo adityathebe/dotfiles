@@ -1,0 +1,21 @@
+
+# -- feeds ---------------------------------------------------------------------
+
+auto-reload yes
+reload-time 120
+reload-threads 4
+download-retries 4
+download-timeout 10
+prepopulate-query-feeds yes
+
+# -- display -------------------------------------------------------------------
+
+# feed-sort-order unreadarticlecount-asc
+show-read-feeds no
+color info default default reverse
+color listnormal_unread yellow default
+color listfocus blue default reverse bold
+color listfocus_unread blue default reverse bold
+
+text-width 80
+
