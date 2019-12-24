@@ -1,5 +1,5 @@
 # Load aliases 
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/.aliases"
 
 # Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"

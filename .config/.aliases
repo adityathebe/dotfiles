@@ -4,13 +4,12 @@
 # Aliases #
 ###########
 
-# Verbosity and settings that you pretty much just always are going to want.
+# Verbosity
 alias mv="mv -iv"
 alias cp="rsync -ah --progress"
 alias rm="rm -v"
-
-alias ls="ls -hN --color=auto --group-directories-first"
-alias ll='ls -l --color=auto --group-directories-first '
+alias ls='ls -hN --color=auto --group-directories-first'
+alias ll='ls -l --color=auto --group-directories-first'
 alias lh='ls -alF --color=auto --group-directories-first'
 alias lg='ls -alF | grep'
 
@@ -21,7 +20,7 @@ alias i3bconf='vim ~/.i3blocks.conf'
 alias i3conf='vim ~/.config/i3/config'
 
 alias rss="newsboat"
-alias publicip='curl https://api.ipify.org/ && echo'
+alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias du='du -ch'
 alias df='df -h'
 alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
