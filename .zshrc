@@ -1,5 +1,4 @@
 # Load aliases 
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/.aliases"
 
 # Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -21,6 +20,7 @@ export CHROME_PATH=/usr/bin/google-chrome-stable
 export ZSH="/home/gunners/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=3
 source $ZSH/oh-my-zsh.sh
+source $HOME/.config/.aliases
 ENABLE_CORRECTION="true"
 
 
