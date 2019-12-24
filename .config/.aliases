@@ -14,7 +14,7 @@ alias lh='ls -alF --color=auto --group-directories-first'
 alias lg='ls -alF | grep'
 
 # Configs
-alias zshconfig="vim ~/.zshrc"
+alias zshconf="vim ~/.zshrc"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias i3bconf='vim ~/.i3blocks.conf'
 alias i3conf='vim ~/.config/i3/config'
