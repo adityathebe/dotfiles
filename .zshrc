@@ -9,17 +9,16 @@ plugins=(
   history
 )
 
-# Chrome (For NickJS)
-export CHROME_PATH=/usr/bin/google-chrome-stable
-
 ###############
 # ZSH configs #
 ###############
-export ZSH="/home/gunners/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=3
+
+ENABLE_CORRECTION="true"
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
-ENABLE_CORRECTION="true"
 
 
 # >>> conda initialize >>>
@@ -36,8 +35,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-export GIT_EDITOR=vim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

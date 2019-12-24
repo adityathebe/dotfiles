@@ -30,6 +30,7 @@ fi
 export TERMINAL="terminator"
 export BROWSER="brave"
 export FILEBROWSER="nautilus"
+export GIT_EDITOR=vim
 
 #############
 # ENV PATHS #
@@ -46,6 +47,9 @@ export PATH=~/anaconda3/bin:$PATH
 
 # PipEnv
 export PATH=~/.local/bin:$PATH
+
+# Chrome Path for Nickjs
+export CHROME_PATH=/usr/bin/google-chrome-stable
 
 # NPM Global configuration
 NPM_PACKAGES="${HOME}/.npm-packages"
