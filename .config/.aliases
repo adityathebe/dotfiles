@@ -12,6 +12,7 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias ll='ls -l --color=auto --group-directories-first'
 alias lh='ls -alF --color=auto --group-directories-first'
 alias lg='ls -alF | grep'
+alias mkd='mkdir -pv'
 
 # Configs
 alias zshconf="vim ~/.zshrc"
@@ -25,8 +26,11 @@ alias du='du -ch'
 alias df='df -h'
 alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
 alias jp="jupyter notebook ."
+
+# Audio and video downloaders from spotify and youtube
 alias spotdl="spotdl -o .m4a -f ."
-alias yta="youtube-dl --add-metadata -i -x bestaudio/best"
+alias yta="youtube-dl --add-metadata -i -x --audio-format best"
+alias yt="youtube-dl --add-metadata -i"
 
 # Silly apt aliases
 alias aupdate="sudo apt update"
