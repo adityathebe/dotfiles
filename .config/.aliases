@@ -39,3 +39,6 @@ alias aulist="sudo apt list --upgradable"
 
 # speedtest: get a 100MB file via wget
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip"
+
+# Weather Report
+alias weather="curl https://wttr.in/kathmandu"
