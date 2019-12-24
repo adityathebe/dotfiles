@@ -23,3 +23,5 @@ super + Print
 super + shift + Print
     flameshot full -p ~/Pictures/Screenshots/
 
+ctrl + alt + Delete
+    $TERMINAL -e htop
