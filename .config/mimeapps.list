@@ -313,6 +313,5 @@ application/msword=libreoffice-startcenter.desktop;
 text/x-java=sublime_text.desktop;
 application/x-php=vlc.desktop;
 x-scheme-handler/magnet=userapp-transmission-gtk-NX7S7Z.desktop;
-inode/directory=org.gnome.Nautilus.desktop;
 text/html=brave-browser.desktop;
 image/png=gimp.desktop;feh.desktop;
