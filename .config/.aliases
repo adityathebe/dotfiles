@@ -15,10 +15,13 @@ alias lg='ls -alF | grep'
 alias mkd='mkdir -pv'
 
 # Configs
-alias zshconf="vim ~/.zshrc"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias i3bconf='vim ~/.i3blocks.conf'
+alias zshconf="vim ~/.config/zsh/.zshrc"
+alias i3bconf='vim ~/.config/i3blocks/config'
 alias i3conf='vim ~/.config/i3/config'
+alias aliases='vim ~/.config/.aliases'
+
+# Bare Git Repository Controller for dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias rss="newsboat"
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
