@@ -2,35 +2,53 @@
     monitor = 0
     follow = keyboard           # Display notification on current working monitor
     transparency = 20
-    frame_width = 3
-    frame_color = "#282828"
+    indicate_hidden = yes
     shrink = yes                # Responsive notification box
     notification_height = 20
     horizontal_padding = 10     # Left and right padding
     sort = yes                  # Sort message by urgency
-    geometry = "350x5-0+24"     
-    aligment = left
+    stack_duplicates = true
+    hide_duplicate_count = false
 
-    font = "System San Francisco Display Regular 14"
+    # Display indicators for URLs (U) and actions (A).
+    show_indicators = yes
+
+    # Frames
+    frame_width = 3
+    frame_color = "#aaaaaa"
+
+    # [{width} x {height} [+/-{x} +/-{y}]]
+    geometry = "350x5-15+24"
+
+    # Formattings
+    font = "System San Francisco Display Regular 10"
     markup = full
     format = "<b>%s</b>\n%b"
+    aligment = left
 
-    # ignore_newline = no
-    # separator_color = frame
-    # show_indicators = true
+    # Separator
+    separator_color = frame
+    separator_height = 2
 
+    # Split notifications into multiple lines if they don't fit into geometry.
+    word_wrap = yes
+
+    # Browser for opening urls in context menu.
+    browser = /usr/bin/firefox -new-tab
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
 
 [urgency_low]
     background = "#282828"
     foreground = "#928374"
     timeout = 5
 
-
 [urgency_normal]
     background = "#458588"
     foreground = "#ebdbb2"
     timeout = 5
-
 
 [urgency_critical]
     background = "#cc2421"
