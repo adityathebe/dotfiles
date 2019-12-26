@@ -6,6 +6,7 @@
     shrink = yes                # Responsive notification box
     notification_height = 20
     horizontal_padding = 10     # Left and right padding
+    padding = 6
     sort = yes                  # Sort message by urgency
     stack_duplicates = true
     hide_duplicate_count = false
@@ -28,7 +29,7 @@
 
     # Separator
     separator_color = frame
-    separator_height = 2
+    separator_height = 3
 
     # Split notifications into multiple lines if they don't fit into geometry.
     word_wrap = yes
