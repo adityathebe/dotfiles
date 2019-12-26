@@ -29,8 +29,8 @@ fi
 # Default programs
 export TERMINAL="terminator"
 export BROWSER="brave"
-export FILEBROWSER="nautilus"
-export GIT_EDITOR=vim
+export FILEBROWSER="nemo"
+export GIT_EDITOR="vim"
 
 #############
 # ENV PATHS #
