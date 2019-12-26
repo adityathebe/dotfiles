@@ -1,0 +1,40 @@
+[global]
+    monitor = 0
+    follow = keyboard           # Display notification on current working monitor
+    transparency = 20
+    frame_width = 3
+    frame_color = "#282828"
+    shrink = yes                # Responsive notification box
+    notification_height = 20
+    horizontal_padding = 10     # Left and right padding
+    sort = yes                  # Sort message by urgency
+    geometry = "350x5-0+24"     
+    aligment = left
+
+    font = "System San Francisco Display Regular 14"
+    markup = full
+    format = "<b>%s</b>\n%b"
+
+    # ignore_newline = no
+    # separator_color = frame
+    # show_indicators = true
+
+
+[urgency_low]
+    background = "#282828"
+    foreground = "#928374"
+    timeout = 5
+
+
+[urgency_normal]
+    background = "#458588"
+    foreground = "#ebdbb2"
+    timeout = 5
+
+
+[urgency_critical]
+    background = "#cc2421"
+    foreground = "#ebdbb2"
+    frame_color = "#fabd2f"
+    timeout = 0
+
