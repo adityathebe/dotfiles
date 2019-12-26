@@ -24,7 +24,7 @@
     font = "System San Francisco Display Regular 10"
     markup = full
     format = "<b>%s</b>\n%b"
-    aligment = left
+    alignment = left
 
     # Separator
     separator_color = frame
