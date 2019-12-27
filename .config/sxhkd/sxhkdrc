@@ -6,7 +6,11 @@ super + Escape
     pkill -USR1 -x sxhkd
 
 super + d
-    rofi -show run -lines 5 -width 50 -font "Systme San Francisco Dispaly 15"
+    rofi -show run -lines 5 -width 50 -font "System San Francisco Display 15"
+
+# rofi script for config files
+super + u
+    ~/.scripts/rofi/edit-configs.sh 
 
 super + n
     $FILEBROWSER
