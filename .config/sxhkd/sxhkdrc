@@ -1,5 +1,8 @@
 super + Return
-	$TERMINAL
+    $TERMINAL
+
+ctrl + alt + Delete
+    $TERMINAL -e htop
 
 # Reload sxhkd configuration file
 super + Escape
@@ -8,28 +11,35 @@ super + Escape
 super + d
     rofi -show run -lines 5 -width 50 -font "System San Francisco Display 15"
 
-# rofi script for config files
-super + u
-    ~/.scripts/rofi/edit-configs.sh 
-
 super + n
     $FILEBROWSER
 
 super + x
     ~/.scripts/i3blocks/i3lock
 
+#####################
+### Monitor Setup ###
+#####################
 super + shift + m
     xrandr --output LVDS-1 --auto && xrandr --output LVDS-1 --primary && xrandr --output HDMI-1 --off
 
 super + shift + d
     xrandr --output LVDS-1 --auto && xrandr --output HDMI-1 --auto && xrandr --output HDMI-1 --above LVDS-1 && xrandr --output LVDS-1 --primary
 
-# Flameshot Screenshot
+############################
+### Flameshot Screenshot ###
+############################
 super + Print
     flameshot gui -p ~/Pictures/Screenshots/
 
 super + shift + Print
     flameshot full -p ~/Pictures/Screenshots/
 
-ctrl + alt + Delete
-    $TERMINAL -e htop
+############
+### ROFI ###
+############
+super + u
+    ~/.scripts/rofi/edit-configs.sh
+
+super + m
+    ~/.scripts/rofi/list-songs.sh
