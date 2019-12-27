@@ -143,6 +143,7 @@ assign [class="Transmission-gtk"] $ws7
 assign [class="Boostnote"] $ws8
 assign [class="TelegramDesktop"] $ws9
 assign [class="Lollypop|Audacious"] $ws10
+assign [class="ffplay"] $ws10
 
 # Move workspaces to different screens
 bindsym $mod+Shift+greater move workspace to output HDMI-1
