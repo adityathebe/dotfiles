@@ -1,6 +1,10 @@
 super + Return
 	$TERMINAL
 
+# Reload sxhkd configuration file
+super + Escape
+    pkill -USR1 -x sxhkd
+
 super + d
     rofi -show run -lines 5 -width 50 -font "Systme San Francisco Dispaly 15"
 
