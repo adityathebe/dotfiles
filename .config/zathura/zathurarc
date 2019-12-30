@@ -1,6 +1,9 @@
 set statusbar-h-padding 0
 set statusbar-v-padding 0
 
+map i recolor
+map R reload
+map r rotate
 map K zoom in
 map J zoom out
 map D toggle_page_mode
