@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# I use this script with rofi to enumerate all the mp3 and m4a files in ~/Music directory
-# The selected song will be played with ffplay
+# I use this script with rofi to enumerate all the audio files in my muysic directory
+# The selected song is played with mpc
 
-song=$(find "$HOME/Music" -type f \( -name "*.mp3" -o -name "*.m4a" \) | rofi -dmenu -i -lines 5 -width 80 -p "Select Song : " -font "Overpass 15")
+song=$(mpc listall | rofi -dmenu -i -lines 5 -width 80 -p "Select Song : " -font "Overpass 15");
 
+# Play with mpc
+mpc clear;
+mpc add "$song";
+mpc play;
 
-ffplay -autoexit "$song"
-
+exit 1;
