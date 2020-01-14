@@ -31,17 +31,11 @@ export GIT_EDITOR="vim"
 # ENV PATHS #
 #############
 
-# MassDNS
-export PATH=$PATH:/usr/local/massdns/bin
-
 # GoLang
 export GO111MODULE=on
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-# Postman
-export PATH=/usr/bin/postman:$PATH
- 
 # Robo3T
 export PATH=/usr/bin/robo3t/bin:$PATH
  
