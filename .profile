@@ -35,7 +35,15 @@ export GIT_EDITOR="vim"
 #############
 # ENV PATHS #
 #############
- 
+
+#MassDNS
+export PATH=$PATH:/usr/local/massdns/bin
+
+# GoLang
+export GO111MODULE=on
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
 # Postman
 export PATH=/usr/bin/postman:$PATH
  
@@ -45,9 +53,6 @@ export PATH=/usr/bin/robo3t/bin:$PATH
 # Anaconda
 export PATH=~/anaconda3/bin:$PATH
 
-# PipEnv
-export PATH=~/.local/bin:$PATH
-
 # Chrome Path for Nickjs
 export CHROME_PATH=/usr/bin/google-chrome-stable
 
@@ -56,3 +61,5 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+export NODE_REPL_HISTORY=''
