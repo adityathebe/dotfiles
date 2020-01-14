@@ -6,7 +6,7 @@
 
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
-#umask 022
+# umask 022
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -44,11 +44,5 @@ export PATH=~/anaconda3/bin:$PATH
 
 # Chrome Path for Nickjs
 export CHROME_PATH=/usr/bin/google-chrome-stable
-
-# NPM Global configuration
-NPM_PACKAGES="${HOME}/.npm-packages"
-export PATH="$NPM_PACKAGES/bin:$PATH"
-unset MANPATH
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 export NODE_REPL_HISTORY=''
