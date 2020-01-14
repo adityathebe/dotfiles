@@ -35,4 +35,7 @@ export PATH=/usr/bin/robo3t/bin:$PATH
 # Chrome Path for Nickjs
 export CHROME_PATH=/usr/bin/google-chrome-stable
 
+# Add Yarn global packages to $PATH
+export PATH=$PATH:$HOME/.yarn/bin
+
 export NODE_REPL_HISTORY=''
