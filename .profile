@@ -32,9 +32,6 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 # Robo3T
 export PATH=/usr/bin/robo3t/bin:$PATH
  
-# Anaconda
-export PATH=~/anaconda3/bin:$PATH
-
 # Chrome Path for Nickjs
 export CHROME_PATH=/usr/bin/google-chrome-stable
 
