@@ -1,3 +1,3 @@
 # Dotfiles
 
-![Arch Setup](https://imgur.com/HTs2Ybq)
+![Arch Setup](https://i.imgur.com/HTs2Ybq.png)
