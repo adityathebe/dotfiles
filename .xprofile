@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+sxhkd -m 1 &
+flameshot &
+dunst &
+picom --config ~/.config/picom/picom.conf &
+exec bspwm
