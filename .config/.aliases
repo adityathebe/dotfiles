@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Verbosity
+alias mv="mv -iv"
+alias cp="rsync -arh --progress"
+alias rm="rm -v"
+alias ls='ls -hN --color=auto --group-directories-first'
+alias ll='ls -l --color=auto --group-directories-first'
+alias lh='ls -alF --color=auto --group-directories-first'
+alias lg='ls -alF | grep'
+alias mkdir='mkdir -pv'
+
+# Configs
+alias zshconf="vim ~/.config/zsh/.zshrc"
+alias aliases='vim ~/.config/.aliases'
+alias bspconf='vim ~/.config/bspwm/bspwmrc'
+alias polyconf='vim ~/.config/polybar/config'
+
+# Bare Git Repository Controller for dotfiles
+alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfilesGitBareRepo --work-tree=$HOME'
+
+# Applications
+alias vim="nvim"
+alias rss="newsboat"
+alias publicip='dig +short myip.opendns.com @resolver1.opendns.com -4'
+alias du='du -ch'
+alias df='df -h'
+alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
+
+# Audio and video downloaders from spotify and youtube
+alias spotdl="spotdl -o .m4a -f ."
+alias yta="youtube-dl --add-metadata -i -x --audio-format best"
+alias yt="youtube-dl --add-metadata -i"
+
+# speedtest: get a 100MB file via wget
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip"
+
+# Weather Report
+alias weather="curl https://wttr.in/kathmandu"
