@@ -1,0 +1,288 @@
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+window-outline = #5f79aa
+red = #a54242
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+;margin-top = 5
+;margin-bottom = 5
+
+############################
+######## BOTTOM BAR ########
+############################
+[bar/bottom-bar]
+bottom = true
+width = 100%
+height = 20
+radius = 1.0
+fixed-center = true
+wm-restack = bspwm
+separator = |
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+border-size = 0
+border-color = #00000000
+module-margin-left = 1
+module-margin-right = 1
+font-0 = Monospace:size=10;3
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+padding-left = 2
+padding-right = 2
+modules-left = rootfs homefs memory cpu temperature screen volume
+modules-right = bandwidth localip publicip essid crypto
+
+#########################
+######## TOP BAR ########
+#########################
+[bar/top-bar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+radius = 1.0
+fixed-center = true
+wm-restack = bspwm
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; Underline configs
+line-size = 2
+line-color = #f00
+
+; Bar borders
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Monospace:size=10;3
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+
+modules-left = bspwm
+modules-center = mpd
+modules-right = date battery powermenu
+
+tray-position = right
+tray-padding = 2
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+#########################
+######## Modules ########
+#########################
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+
+[module/homefs]
+type = internal/fs
+interval = 30
+mount-0 = /home
+fixed-values = true
+label-mounted =  %used% (%percentage_used%%)
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/rootfs]
+type = internal/fs
+interval = 30
+mount-0 = /
+fixed-values = true
+label-mounted =  %used% (%percentage_used%%)
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+
+[module/bspwm]
+type = internal/bspwm
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 1
+label-occupied = %index%
+label-occupied-padding = 1
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+
+
+[module/screen]
+type = custom/script
+exec = light -G
+# scroll-up = exec light -A 5
+# scroll-down = light -U 5
+interval = 0.1
+label =  %output%
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+[module/publicip]
+type = custom/script
+exec = dig @resolver1.opendns.com A myip.opendns.com +short -4
+interval = 5
+label =  %output%
+
+[module/cpu]
+type = internal/cpu
+label =  %percentage%%
+
+[module/memory]
+type = internal/memory
+label =  %gb_used%
+
+[module/essid]
+type = internal/network
+interface = wlp58s0
+interval = 1
+label-connected =  %essid%
+label-disconnected =  Not Connected
+
+[module/localip]
+type = internal/network
+interface = wlp58s0
+interval = 1
+label-connected =  %local_ip%
+
+
+[module/bandwidth]
+type = internal/network
+interface = wlp58s0
+interval = 1
+label-connected =  %downspeed%  %upspeed%
+
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %e %b (%a)
+time = %I:%M %p
+format-prefix = " " 
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume> <label-volume>
+format-muted =  0%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+poll-interval = 1
+full-at = 100
+
+time-format = %H:%M
+label-discharging = %percentage% [%time%]
+label-charging = %percentage%%
+label-full = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging =  <label-charging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 4
+warn-temperature = 60
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-foreground = ${colors.foreground-alt}
+
+
+[module/crypto]
+type = custom/script
+interval = 300
+exec = ~/.config/polybar/scripts/crypto.py
+
+[module/powermenu]
+type = custom/menu
+expand-right = true
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.window-outline}
+label-close = 
+label-close-foreground = ${colors.red}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = Suspend
+menu-0-0-exec = menu-open-1
+menu-0-1 = Reboot
+menu-0-1-exec = menu-open-2
+menu-0-2 = Shutdown
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = Suspend
+menu-1-0-exec = betterlockscreen -s dim
+menu-1-1 = Cancel Suspend
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = Reboot
+menu-2-0-exec = sudo reboot
+menu-2-1 = Cancel Reboot
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = Shutdown
+menu-3-0-exec = shutdown now
+menu-3-1 = Cancel Shutdown
+menu-3-1-exec = menu-open-0
