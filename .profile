@@ -6,6 +6,6 @@ export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$
 
 export XDG_CONFIG_HOME=$HOME/.config
 
-
+# Default applications
 export TERMINAL=termite
 export GIT_EDITOR=nvim
