@@ -14,6 +14,15 @@ XF86AudioPrev
 XF86AudioNext
    mpc next
 
+XF86AudioRaiseVolume
+	pulsemixer --change-volume 5
+
+XF86AudioLowerVolume
+	pulsemixer --change-volume -5
+
+XF86AudioMute
+	pulsemixer --toggle-mute
+
 ######################
 ### Custom Scripts ###
 ######################
@@ -84,9 +93,9 @@ super + {t,shift + t,s,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
+#################
+# focus/swap ####
+#################
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -118,11 +127,11 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
 
-# preselect the direction
+#################################
+# preselect the direction #######
+#################################
+# preselect
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
@@ -138,10 +147,9 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
-
+######################
+# move/resize ########
+######################
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
@@ -155,8 +163,9 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 
-
-# change window gap at run time
+######################################
+# change window gap at run time ######
+######################################
 super + equal
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` + 5 ))
 
