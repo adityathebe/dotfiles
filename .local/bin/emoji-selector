@@ -3,7 +3,7 @@
 # Must have xclip installed to even show menu.
 xclip -h >/dev/null || exit
 
-chosen=$(grep -v "#" ~/.local/share/unicode/emoji | rofi -dmenu -i -lines 20 -location 1 -width 100 -p "Select Song" -font "Hack 15")
+chosen=$(grep -v "#" ~/.local/share/unicode/emoji | rofi -dmenu -i -lines 20 -location 1 -width 100 -p "Select" -font "Hack 15")
 
 [ "$chosen" != "" ] || exit
 
