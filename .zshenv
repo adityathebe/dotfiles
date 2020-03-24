@@ -1,1 +1,3 @@
-export ZDOTDIR="$HOME/.config/zsh"
+#!/usr/bin/zsh
+
+[ -f "$HOME/.config/env" ] && source "$HOME/.config/env"

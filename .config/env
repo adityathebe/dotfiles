@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+############
+# PATH VAR #
+############
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$/    /')"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
+ # Default applications
+export TERMINAL="alacritty"
+export GIT_EDITOR="nvim"
+export EDITOR="nvim"
+export BROWSER="brave"
+
+# Fix for Intellij bspwm issue
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Maven
+export PATH=$PATH:$HOME/Softwares/Java/apache-maven-3.6.3/bin/
+export M2_HOME=$HOME/.m2/
+
+# Rust Cargo
+
+# Clean up home dir
+export ZDOTDIR="$HOME/.config/zsh"
+export LESSHISTFILE="-"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
