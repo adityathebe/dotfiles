@@ -25,7 +25,15 @@ call plug#begin('~/.config/nvim/plugins')
 call plug#end()
 
 " Prettier 
-map <C-S-i> :Prettier<CR>
+map <C-S-i> :PrettierAsync<CR>
+let g:prettier#config#print_width = 80
+let g:prettier#config#single_quote = 80
+let g:prettier#config#semi = true
+let g:prettier#config#arrowParens = 'avoid'
+let g:prettier#config#useTabs = false
+let g:prettier#config#endOfLine = 'lf'
+let g:prettier#config#trailingComma = 'es5'
+
 
 " Commentary
 map cm <Plug>Commentary
