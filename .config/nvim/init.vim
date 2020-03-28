@@ -40,13 +40,14 @@ map cm <Plug>Commentary
 map <C-/> :cml<CR>
 
 " Nerd Tree
-map <C-b> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 " Airline theme
 let g:airline_theme='gruvbox'
 
-" Ignore certain directories
+" CtrlP
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_show_hidden = 1
 
 
 """""""""
