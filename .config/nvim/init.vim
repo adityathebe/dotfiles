@@ -24,12 +24,13 @@ call plug#begin('~/.config/nvim/plugins')
 	Plug 'mattn/emmet-vim'
 call plug#end()
 
-" Ale formatters
+" Prettier 
 map <C-S-i> :Prettier<CR>
 
 " Commentary
 map cm <Plug>Commentary
 map <C-/> :cml<CR>
+
 " Nerd Tree
 map <C-b> :NERDTreeToggle<CR>
 
@@ -39,8 +40,8 @@ let g:airline_theme='gruvbox'
 " Ignore certain directories
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
+
 """""""""
 " Theme "
 """""""""
 colorscheme gruvbox
-
