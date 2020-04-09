@@ -43,14 +43,14 @@ font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 padding-left = 2
 padding-right = 2
-modules-left = rootfs homefs memory cpu temperature screen volume
+modules-left = swapfile rootfs homefs memory cpu temperature screen pulseaudio
 modules-right = bandwidth localip publicip essid crypto
 
 #########################
 ######## TOP BAR ########
 #########################
 [bar/top-bar]
-;monitor = ${env:MONITOR:HDMI-1}
+# monitor = eDP-1
 width = 100%
 height = 30
 ;offset-x = 1%
@@ -83,7 +83,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 modules-left = bspwm
 modules-center = mpd
-modules-right = date battery powermenu
+modules-right = date battery
 
 tray-position = right
 tray-padding = 2
@@ -94,8 +94,6 @@ cursor-scroll = ns-resize
 #########################
 ######## Modules ########
 #########################
-
-
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -139,8 +137,8 @@ label-empty-padding = 1
 [module/screen]
 type = custom/script
 exec = light -G
-# scroll-up = exec light -A 5
-# scroll-down = light -U 5
+scroll-up = exec light -A 3
+scroll-down = light -U 3
 interval = 0.1
 label =  %output%
 
@@ -153,7 +151,7 @@ icon-stop = 
 icon-play = 
 icon-pause = 
 icon-next = 
-label-song-maxlen = 25
+label-song-maxlen = 50
 label-song-ellipsis = true
 
 [module/publicip]
@@ -199,8 +197,10 @@ time = %I:%M %p
 format-prefix = " " 
 label = %date% %time%
 
-[module/volume]
-type = internal/volume
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 1
 format-volume = <ramp-volume> <label-volume>
 format-muted =  0%
 ramp-volume-0 = 
@@ -214,7 +214,7 @@ poll-interval = 1
 full-at = 100
 
 time-format = %H:%M
-label-discharging = %percentage% [%time%]
+label-discharging = %percentage%
 label-charging = %percentage%%
 label-full = %percentage%%
 
@@ -250,39 +250,11 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/crypto]
 type = custom/script
-interval = 300
-exec = ~/.config/polybar/scripts/crypto.py
+interval = 600
+;exec = ~/.config/polybar/scripts/crypto.py
+exec = ~/.local/bin/statusbar/crypto
 
-[module/powermenu]
-type = custom/menu
-expand-right = true
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.window-outline}
-label-close = 
-label-close-foreground = ${colors.red}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = Suspend
-menu-0-0-exec = menu-open-1
-menu-0-1 = Reboot
-menu-0-1-exec = menu-open-2
-menu-0-2 = Shutdown
-menu-0-2-exec = menu-open-3
-
-menu-1-0 = Suspend
-menu-1-0-exec = betterlockscreen -s dim
-menu-1-1 = Cancel Suspend
-menu-1-1-exec = menu-open-0
-
-menu-2-0 = Reboot
-menu-2-0-exec = sudo reboot
-menu-2-1 = Cancel Reboot
-menu-2-1-exec = menu-open-0
-
-menu-3-0 = Shutdown
-menu-3-0-exec = shutdown now
-menu-3-1 = Cancel Shutdown
-menu-3-1-exec = menu-open-0
+[module/swapfile]
+type = custom/script
+interval = 2
+exec = swapon --show | awk 'FNR == 2{print $4}'
