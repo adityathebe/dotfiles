@@ -83,7 +83,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 modules-left = bspwm
 modules-center = mpd
-modules-right = date battery
+modules-right = newsboat date battery
 
 tray-position = right
 tray-padding = 2
@@ -251,10 +251,14 @@ ramp-foreground = ${colors.foreground-alt}
 [module/crypto]
 type = custom/script
 interval = 600
-;exec = ~/.config/polybar/scripts/crypto.py
 exec = ~/.local/bin/statusbar/crypto
 
 [module/swapfile]
 type = custom/script
 interval = 2
 exec = swapon --show | awk 'FNR == 2{print $4}'
+
+[module/newsboat]
+type = custom/script
+interval = 600
+exec = /usr/bin/newsboat -x print-unread | awk '{ print " " $1}'
