@@ -1,8 +1,15 @@
 #!/bin/bash
 
-FILE="/tmp/ip-addr-polybar-db"
-[ ! -f "$FILE" ] && echo "local" > $FILE
+############################
+# Check if interface is up #
+############################
+if [[ ! $(ip a show wlp58s0 up) ]]; then
+	exit 1
+fi
 
+# Create file if it does not exist
+FILE="/tmp/ip-addr-polybar-db"
+[ ! -f "$FILE" ] && echo "local" >$FILE
 
 get_local_ip() {
 	ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}'
@@ -13,11 +20,12 @@ get_public_ip() {
 }
 
 SELECTED=$(head -n 1 $FILE)
-if [ $SELECTED = 'local' ];
-then
+if [ $SELECTED = 'local' ]; then
 	get_local_ip
+	echo "public" >$FILE
 else
 	get_public_ip
+	echo "local" >$FILE
 fi
 
-exit 0;
+exit 0

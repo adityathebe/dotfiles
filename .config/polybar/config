@@ -27,6 +27,7 @@ radius = 1.0
 fixed-center = true
 wm-restack = bspwm
 separator = |
+enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -156,10 +157,10 @@ label-song-maxlen = 50
 label-song-ellipsis = true
 
 [module/ipaddress]
-type = custom/script
-exec = sh ~/.local/bin/statusbar/ip-addr
-click-left = sh ~/.local/bin/statusbar/ip-addr-toggle
-interval = 5
+type = custom/ipc
+hook-0= /home/gunners/.local/bin/statusbar/ip-addr
+initial=1
+click-left = polybar-msg -p %pid% hook ipaddress 1
 label =  %output%
 
 [module/cpu]
@@ -243,9 +244,11 @@ ramp-foreground = ${colors.foreground-alt}
 
 
 [module/crypto]
-type = custom/script
+type = custom/ipc
 interval = 600
-exec = ~/.local/bin/statusbar/crypto
+hook-0 = ~/.local/bin/statusbar/crypto
+initial = 1
+click-left = polybar-msg -p %pid% hook crypto 1
 
 [module/swapfile]
 type = custom/script
