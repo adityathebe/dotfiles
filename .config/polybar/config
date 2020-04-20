@@ -161,7 +161,7 @@ type = custom/ipc
 hook-0= /home/gunners/.local/bin/statusbar/ip-addr
 initial=1
 click-left = polybar-msg -p %pid% hook ipaddress 1
-label =  %output%
+format =  <output>
 
 [module/cpu]
 type = internal/cpu
