@@ -32,6 +32,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
+cursor-click = pointer
 line-color = #f00
 border-size = 0
 border-color = #00000000
@@ -44,7 +45,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 padding-left = 2
 padding-right = 2
 modules-left = swapfile rootfs homefs memory cpu temperature screen pulseaudio
-modules-right = bandwidth localip publicip essid crypto
+modules-right = bandwidth ipaddress essid crypto
 
 #########################
 ######## TOP BAR ########
@@ -154,11 +155,12 @@ icon-next = 
 label-song-maxlen = 50
 label-song-ellipsis = true
 
-[module/publicip]
+[module/ipaddress]
 type = custom/script
-exec = dig @resolver1.opendns.com A myip.opendns.com +short -4
+exec = sh ~/.local/bin/statusbar/ip-addr
+click-left = sh ~/.local/bin/statusbar/ip-addr-toggle
 interval = 5
-label =  %output%
+label =  %output%
 
 [module/cpu]
 type = internal/cpu
@@ -175,19 +177,11 @@ interval = 1
 label-connected =  %essid%
 label-disconnected =  Not Connected
 
-[module/localip]
-type = internal/network
-interface = wlp58s0
-interval = 1
-label-connected =  %local_ip%
-
-
 [module/bandwidth]
 type = internal/network
 interface = wlp58s0
 interval = 1
 label-connected =  %downspeed%  %upspeed%
-
 
 [module/date]
 type = internal/date
@@ -260,5 +254,6 @@ exec = swapon --show | awk 'FNR == 2{print $4}'
 
 [module/newsboat]
 type = custom/script
-interval = 600
+interval = 30
 exec = /usr/bin/newsboat -x print-unread | awk '{ print " " $1}'
+click-left = $TERMINAL -e newsboat
