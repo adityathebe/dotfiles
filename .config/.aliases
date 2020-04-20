@@ -22,7 +22,6 @@ alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfilesGitBareRepo --work-tree=$HO
 # Applications
 alias vim="nvim"
 alias rss="newsboat"
-alias torrent="transmission-remote-cli"
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com -4'
 alias du='du -ch'
 alias df='df -h'
