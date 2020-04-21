@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 declare -a arr=(
+	"https://www.reddit.com/r/archlinux"
 	"https://www.adityathebe.com"
 	"https://www.reddit.com/r/gunners"
 	"https://www.reddit.com/r/soccer"
@@ -10,6 +11,7 @@ declare -a arr=(
 	"https://www.fiverr.com"
 	"https://www.twitter.com"
 	"https://www.github.com"
+	"https://github.com/adityathebe/dotfiles"
 )
 
 chosen=$(printf '%s\n' "${arr[@]}" | rofi -dmenu -i -lines 5 -location 1 -width 100 -p "Select" -font "Hack 15")
