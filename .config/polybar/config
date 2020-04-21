@@ -1,7 +1,7 @@
 [colors]
-background = #222
+background = #2E3440
 background-alt = #444
-foreground = #dfdfdf
+foreground = #D8DEE9
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -85,7 +85,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 separator = "|"
 modules-left = bspwm xwindow
 modules-center = mpd
-modules-right = newsboat date battery
+modules-right = pacmanupgradables newsboat date battery
 
 tray-position = right
 tray-padding = 2
@@ -251,3 +251,9 @@ type = custom/script
 interval = 30
 exec = /usr/bin/newsboat -x print-unread | awk '{ print " " $1}'
 click-left = $TERMINAL -e newsboat
+
+[module/pacmanupgradables]
+type = custom/script
+interval = 30
+exec = ~/.local/bin/statusbar/pacman-list-upgradable-packages
+click-left = notify-send "$(pacman -Qu)" -u low

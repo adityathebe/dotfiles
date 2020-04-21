@@ -3,13 +3,15 @@ set relativenumber
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-
+set ignorecase
+set incsearch
+set hlsearch
 
 """""""""""
 " Plugins "
 """""""""""
 call plug#begin('~/.config/nvim/plugins')
-	Plug 'morhetz/gruvbox'
+	Plug 'arcticicestudio/nord-vim'
 	Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
@@ -43,7 +45,7 @@ map <C-/> :cml<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " Airline theme
-let g:airline_theme='gruvbox'
+let g:airline_theme='nord'
 
 " CtrlP
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
@@ -53,4 +55,4 @@ let g:ctrlp_show_hidden = 1
 """""""""
 " Theme "
 """""""""
-colorscheme gruvbox
+colorscheme nord
