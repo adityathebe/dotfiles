@@ -15,26 +15,26 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
-  history
+	history
 )
 
 ###############
 # ZSH configs #
 ###############
 export ZSH="$HOME/.oh-my-zsh"
-export UPDATE_ZSH_DAYS=3
-
+export UPDATE_ZSH_DAYS=10
+export DISABLE_AUTO_UPDATE=true
 ENABLE_CORRECTION="true"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
 
-bindkey -v
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 eval "$(pyenv init -)"
+
+# ASDF Version Manager
+export ASDF_DATA_DIR="$HOME/.config/asdf"
+export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="$HOME/.config/asdf/tool-versions"
+export ASDF_CONFIG_FILE="$HOME/.config/asdf/.asdfrc"
+source $HOME/.config/asdf/asdf.sh
