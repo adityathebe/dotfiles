@@ -3,7 +3,7 @@
 ############
 # PATH VAR #
 ############
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$/    /')"
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Default applications
@@ -17,6 +17,9 @@ export BROWSER="brave"
 ########################
 # Fix for Intellij bspwm issue
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Fix for Burpsuite render
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
 export PATH=$PATH:$HOME/Softwares/Java/apache-maven-3.6.3/bin/
 export M2_HOME=$HOME/.m2/

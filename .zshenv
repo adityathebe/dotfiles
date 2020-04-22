@@ -1,3 +1,3 @@
 #!/usr/bin/zsh
 
-[ -f "$HOME/.config/env" ] && source "$HOME/.config/env"
+# [ -f "$HOME/.config/env" ] && source "$HOME/.config/env"

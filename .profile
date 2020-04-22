@@ -1,2 +1,4 @@
-# Profile file.
-# Runs on login. Environmental variables are set here.
+#!/usr/bin/zsh
+
+[ -f "$HOME/.config/env" ] && source "$HOME/.config/env"
+
