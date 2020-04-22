@@ -1,12 +1,12 @@
 [global]
     monitor = 0
     follow = keyboard           # Display notification on current working monitor
-    transparency = 20
+    transparency = 0
     indicate_hidden = yes
     shrink = yes                # Responsive notification box
-    notification_height = 20
+    notification_height = 25
     horizontal_padding = 10     # Left and right padding
-    padding = 6
+    padding = 10
     sort = yes                  # Sort message by urgency
     stack_duplicates = true
     hide_duplicate_count = false
@@ -19,10 +19,10 @@
     frame_color = "#aaaaaa"
 
     # [{width} x {height} [+/-{x} +/-{y}]]
-    geometry = "350x5-15+24"
+    geometry = "350x5-0-0"
 
     # Formattings
-    font = "System San Francisco Display Regular 10"
+    font = "System San Francisco Display Regular 12"
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
@@ -36,24 +36,21 @@
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/firefox -new-tab
+    
+    frame_color = "#c0c5ce"
+    separator_color = "#c0c5ce"
 
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
+    [base16_low]
+        msg_urgency = low
+        background = "#343d46"
+        foreground = "#65737e"
 
-[urgency_low]
-    background = "#282828"
-    foreground = "#928374"
-    timeout = 5
+    [base16_normal]
+        msg_urgency = normal
+        background = "#4f5b66"
+        foreground = "#c0c5ce"
 
-[urgency_normal]
-    background = "#458588"
-    foreground = "#ebdbb2"
-    timeout = 5
-
-[urgency_critical]
-    background = "#cc2421"
-    foreground = "#ebdbb2"
-    frame_color = "#fabd2f"
-    timeout = 0
-
+    [base16_critical]
+        msg_urgency = critical
+        background = "#bf616a"
+        foreground = "#dfe1e8"

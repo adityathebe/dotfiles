@@ -19,7 +19,7 @@ bind-key U show-urls
 bind-key x pb-delete
 
 # -- feeds ---------------------------------------------------------------------
-auto-reload yes
+auto-reload no
 reload-time 120
 reload-threads 4
 download-retries 4
