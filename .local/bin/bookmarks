@@ -14,7 +14,7 @@ declare -a arr=(
 	"https://github.com/adityathebe/dotfiles"
 )
 
-chosen=$(printf '%s\n' "${arr[@]}" | rofi -dmenu -i -lines 5 -location 1 -width 100 -p "Select" -font "Hack 15")
+chosen=$(printf '%s\n' "${arr[@]}" | rofi -dmenu -i -lines 5 -location 1 -width 100 -p "Select")
 
 [ "$chosen" != "" ] || exit
 
