@@ -1,18 +1,21 @@
 super + n
-   $TERMINAL -e ranger
+	$TERMINAL -e ranger
 
 super + x
-    betterlockscreen --lock dim
+  betterlockscreen --lock dim
+
+super + shift + x
+	betterlockscreen -s dim
 
 # function keys
 XF86AudioPlay
-    mpc pause
+  mpc pause
 
 XF86AudioPrev
-   mpc prev
+  mpc prev
 
 XF86AudioNext
-   mpc next
+  mpc next
 
 XF86AudioRaiseVolume
 	pulsemixer --change-volume 5
@@ -29,8 +32,14 @@ XF86AudioMute
 super + u
 	emoji-selector
 
-super + shift + m
+super + m
 	list-songs
+
+super + c
+	list-configs-rofi.sh
+
+super + b
+	bookmarks
 
 #
 # wm independent hotkeys
@@ -42,7 +51,7 @@ super + Return
 
 # program launcher
 super + d
-    rofi -show run -lines 5 -width 50 -font "System San Francisco Display 15"
+    rofi -show run -lines 10 -location 1 -width 100 
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -65,12 +74,15 @@ super + Print
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
+super + ctrl + r
+	~/.config/polybar/polybar_launch.sh
+
 # close and kill
 super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
-super + m
+super + shift + m
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
@@ -79,7 +91,11 @@ super + y
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
+
+# Rotate desktop
+super + {_,shift + }r
+	bspc node @/ --rotate {90,-90}
 
 #
 # state/flags
@@ -87,7 +103,7 @@ super + g
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -t {tiled,pseudo_tiled,\~floating,\~fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -101,32 +117,13 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous node in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local
-
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-
 
 #################################
 # preselect the direction #######
