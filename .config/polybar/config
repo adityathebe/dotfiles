@@ -39,7 +39,7 @@ border-size = 0
 border-color = #00000000
 module-margin-left = 1
 module-margin-right = 1
-font-0 = Monospace:size=10;3
+font-0 = Roboto Mono:size=10;3
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
@@ -78,7 +78,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Monospace:size=10;3
+font-0 = Roboto Mono:size=10;3
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
@@ -250,10 +250,11 @@ exec = swapon --show | awk 'FNR == 2{print $4}'
 type = custom/script
 interval = 30
 exec = /usr/bin/newsboat -x print-unread | awk '{ print " " $1}'
-click-left = $TERMINAL -e newsboat
+click-left = /usr/bin/alacritty -e newsboat &
 
 [module/pacmanupgradables]
 type = custom/script
-interval = 30
+interval = 5
 exec = ~/.local/bin/statusbar/pacman-list-upgradable-packages
 click-left = notify-send "$(pacman -Qu)" -u low
+click-right = $TERMINAL -e sudo pacman -Syu &
