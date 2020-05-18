@@ -13,9 +13,11 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Plugins
 plugins=(
   git
+	colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
 	history
+	systemd
 )
 
 ###############
@@ -24,14 +26,15 @@ plugins=(
 export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=10
 export DISABLE_AUTO_UPDATE=true
-ENABLE_CORRECTION="true"
+export HISTSIZE=1500
+ENABLE_CORRECTION="false"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
+source $HOME/.config/hacking_aliases.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-eval "$(pyenv init -)"
 
 # ASDF Version Manager
 export ASDF_DATA_DIR="$HOME/.config/asdf"

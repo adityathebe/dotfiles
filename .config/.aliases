@@ -28,12 +28,11 @@ alias df='df -h'
 alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
 
 # Audio and video downloaders from spotify and youtube
-alias spotdl="spotdl -o .m4a -f ."
 alias yta="youtube-dl --add-metadata -i -x --audio-format best"
 alias yt="youtube-dl --add-metadata -i"
 
 # speedtest: get a 100MB file via wget
-alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip"
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip" 
 
 # Weather Report
 alias weather="curl https://wttr.in/kathmandu"
