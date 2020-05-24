@@ -39,10 +39,7 @@ checknxdomain() {
 
 checkfingerprint() {
 	while IFS= read -r line; do
-		# Make Request
 		r=$(curl -s -L $line -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36')
-
-		# Check Fingerprint
 		if [[ $r == *$1* ]]; then
 			echo $line
 		fi
@@ -50,6 +47,7 @@ checkfingerprint() {
 }
 
 gitfind() {
+	# Credits to tomnomnom - https://twitter.com/tomnomnom/status/1133345832688857095
 	{
 		find .git/objects/pack/ -name "*.idx" | while read i; do git show-index <"$i" | awk '{print $2}'; done
 		find .git/objects/ -type f | grep -v '/pack/' | awk -F'/' '{print $(NF-1)$NF}'
