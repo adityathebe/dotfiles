@@ -51,4 +51,4 @@ display_bitrate = yes
 display_volume_level = yes
 external_editor = vim
 use_console_editor = yes
-mouse_support = no
+mouse_support = yes
