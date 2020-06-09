@@ -122,8 +122,19 @@ super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus or send to the given desktop
+# super + {_,shift + }{1-9,0}
+# bspc {desktop -f,node -d} '^{1-9,10}'
+# super + {_,shift + } {1,2,3} ; {1-9,0}
+#    bspc {desktop -f, node -d} "^{1,2,3}:^{1-9,10}"
+
+# focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop --focus,node --to-desktop} 'focused:^{1-9,10}'
+
+# move and switch windows between monitors
+super + {_,shift +} {comma, period}
+    bspc {monitor --focus,node --to-monitor} {prev,next}
+
 
 #################################
 # preselect the direction #######
