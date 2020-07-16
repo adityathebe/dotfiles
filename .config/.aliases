@@ -9,9 +9,12 @@ alias ll='ls -l --color=auto --group-directories-first'
 alias lh='ls -alF --color=auto --group-directories-first'
 alias lg='ls -alF | grep'
 alias mkdir='mkdir -pv'
+alias digs='dig +short'
+alias songs='ncmpcpp'
+alias pcache='du -sh /var/cache/pacman/pkg/'
 
 # Configs
-alias zshconf="vim ~/.config/zsh/.zshrc"
+alias zshrc="vim ~/.config/zsh/.zshrc"
 alias aliases='vim ~/.config/.aliases'
 alias bspconf='vim ~/.config/bspwm/bspwmrc'
 alias polyconf='vim ~/.config/polybar/config'
@@ -29,10 +32,18 @@ alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
 
 # Audio and video downloaders from spotify and youtube
 alias yta="youtube-dl --add-metadata -i -x --audio-format best"
-alias yt="youtube-dl --add-metadata -i"
+alias yt="youtube-dl --add-metadata -f 'bestvideo'"
 
 # speedtest: get a 100MB file via wget
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip" 
 
 # Weather Report
 alias weather="curl https://wttr.in/kathmandu"
+
+pyserver() {
+	python -m http.server $1 --bind 127.0.0.1
+}
+
+fkill() {
+	ps aux | grep $1 | grep -v grep | cut -d ' ' -f 3 | xargs kill -9 
+}	
