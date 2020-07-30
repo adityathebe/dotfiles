@@ -16,7 +16,8 @@ get_local_ip() {
 }
 
 get_public_ip() {
-	dig @resolver1.opendns.com A myip.opendns.com +short -4
+	ip=$(dig @resolver1.opendns.com A myip.opendns.com +short -4)
+	echo $ip
 }
 
 SELECTED=$(head -n 1 $FILE)

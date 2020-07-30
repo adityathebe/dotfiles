@@ -2,16 +2,19 @@
 
 declare -a arr=(
 	"https://www.reddit.com/r/archlinux"
-	"https://www.adityathebe.com"
+	"https://www.reddit.com/r/programming"
 	"https://www.reddit.com/r/gunners"
 	"https://www.reddit.com/r/soccer"
 	"https://www.reddit.com/r/videos"
-	"http://intranet.lisnepal.com.np/"
+	"https://www.adityathebe.com"
 	"https://www.youtube.com"
-	"https://www.fiverr.com"
 	"https://www.twitter.com"
 	"https://www.github.com"
 	"https://github.com/adityathebe/dotfiles"
+	"https://twitter.com/i/lists/1255349327330975745#Developers"
+	"https://twitter.com/i/lists/1254981328438779904#Bitcoin"
+	"https://twitter.com/i/lists/1206983793027862528#BugBounty"
+	"http://localhost:8384/#Syncthing"
 )
 
 chosen=$(printf '%s\n' "${arr[@]}" | rofi -dmenu -i -lines 5 -location 1 -width 100 -p "Select")
