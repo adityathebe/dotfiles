@@ -3,8 +3,10 @@
 ############
 # PATH VAR #
 ############
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin/statusbar"
+export PATH="$PATH:$HOME/Softwares/Java/apache-maven-3.6.3/bin/"
+export PATH="$PATH:$HOME/go/bin"
 
 # Default applications
 export TERMINAL="alacritty"
@@ -21,7 +23,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Fix for Burpsuite render
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
-export PATH=$PATH:$HOME/Softwares/Java/apache-maven-3.6.3/bin/
+# Java Maven Repository
 export M2_HOME=$HOME/.m2/
 
 #####################
