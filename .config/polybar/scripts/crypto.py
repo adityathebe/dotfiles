@@ -11,19 +11,19 @@ icon = ''
 
 # Request price
 try:
-	response = requests.get(f'https://api.coinmarketcap.com/v1/ticker/bitcoin',
-									params=params)
-	[json] = response.json()
+    response = requests.get(f'https://api.coinmarketcap.com/v1/ticker/bitcoin', params=params)
+    [json] = response.json()
 
-	local_price = round(Decimal(json[f'price_{base_currency.lower()}']), 2)
-	change_24 = float(json['percent_change_24h'])
+    local_price = round(Decimal(json[f'price_{base_currency.lower()}']), 2)
+    change_24 = float(json['percent_change_24h'])
 
-	display_opt = 'price'
-	if display_opt == 'both' or display_opt == None:
-		sys.stdout.write(f'{icon} {local_price}/{change_24:+}%')
-	elif display_opt == 'percentage':
-		sys.stdout.write(f'{icon} {change_24:+}%')
-	elif display_opt == 'price':
-		sys.stdout.write(f'{icon} {local_price}')
-except:
-	pass
+    display_opt = 'price'
+    if display_opt == 'both' or display_opt == None:
+        sys.stdout.write(f'{icon} {local_price}/{change_24:+}%')
+    elif display_opt == 'percentage':
+        sys.stdout.write(f'{icon} {change_24:+}%')
+    elif display_opt == 'price':
+        sys.stdout.write(f'{icon} {local_price}')
+except Exception as e:
+    print(e)
+    pass

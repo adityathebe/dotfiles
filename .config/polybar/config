@@ -46,7 +46,7 @@ font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 padding-left = 2
 padding-right = 2
-modules-left = rootfs homefs memory cpu cpu-frequency screen pulseaudio
+modules-left = rootfs homefs memory cpu screen pulseaudio
 modules-right = bandwidth ipaddress crypto
 
 #########################
@@ -122,13 +122,13 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 1
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-padding = 1
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 label-empty = 
