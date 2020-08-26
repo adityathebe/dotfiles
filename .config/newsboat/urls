@@ -1,18 +1,22 @@
 ##################################
 # Hackers & Security Researchers #
 ##################################
-https://soroush.secproject.com/blog/feed/ "~IRSDL [Hacker]"
-http://h1.nobbd.de/reports_rss.xml "~Hackerone Hactivity"
-https://samcurry.net/feed/ "~Sam Curry [Hacker]"
-https://ngailong.wordpress.com/feed/ "~Ron Chan - @ngalongc [Hacker]"
-http://www.thespanner.co.uk/feed/ "~The Spanner - Gareth [Hacker]"
-https://pentester.land/feed.xml "~Pentester Lab"
-https://pwning.re/feed.xml "~André Baptista [0xacb] [Hacker]"
-https://0xpatrik.com/rss/ "~Patrik Hudak"
-https://www.arneswinnen.net/feed/ "~Arne Swinnen's Security Blog"
-https://edoverflow.com/rss "~EdOverflow"
-https://blog.innerht.ml/rss/ "~FileDescriptor"
-http://blog.intothesymmetry.com/rss.xml "~Into The Symmetry - [Bug Hunter & oAuth expert]"
+https://www.corben.io/feed.xml "~Corben" bugbounty
+https://anchor.fm/s/fff2ae4/podcast/rss "~Behind Bug Bounty [Podcast]" bugbounty
+https://medium.com/feed/@zseano "~zseano" bugbounty
+https://blog.intigriti.com/feed/ "~Intigriti Bug Bytes" bugbounty
+https://soroush.secproject.com/blog/feed/ "~IRSDL" bugbounty
+https://spaceraccoon.dev/feed/ "~SpaceRacoon" bugbounty
+https://samcurry.net/feed/ "~Sam Curry" bugbounty
+https://ngailong.wordpress.com/feed/ "~Ron Chan - @ngalongc" bugbounty
+http://www.thespanner.co.uk/feed/ "~The Spanner - Gareth [Hacker]" bugbounty
+https://pentester.land/feed.xml "~Pentester Lab" bugbounty
+https://pwning.re/feed.xml "~0xacb" bugbounty
+https://0xpatrik.com/rss/ "~Patrik Hudak" bugbounty
+https://www.arneswinnen.net/feed/ "~Arne Swinnen's Security Blog" bugbounty
+https://edoverflow.com/rss "~EdOverflow" bugbounty
+https://blog.innerht.ml/rss/ "~FileDescriptor" bugbounty
+http://blog.intothesymmetry.com/rss.xml "~Into The Symmetry - [Bug Hunter & oAuth expert]" bugbounty
 #########################################################################
 
 https://bitcoindev.network/rss/ "~Bitcoin Dev Network"
