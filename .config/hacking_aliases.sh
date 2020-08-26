@@ -1,5 +1,13 @@
+# ALIASES
+alias smuggler='python ~/hacking/tools/smuggler/smuggler.py'
+
+###############################################################################
 am(){
 	amass enum --passive -d $1 | tee $1.amass.subdomains.txt
+}
+
+af() {
+	assetfinder -subs-only $1 | grep --color=never "\.$1$"
 }
 
 whois(){
@@ -16,7 +24,6 @@ certspotter(){
 
 checkdomain() {
 	x=$(curl -s -L  https://rtb.namecheapapi.com/api/picks/$1 | jq '.picks[]' | jq -crM "select(.domain == \"$1\")")
-	echo $x
 	if [[ -n "$x" ]]; then
 		echo "✅[Available] $1"
 	else
@@ -27,6 +34,7 @@ checkdomain() {
 dirsearch() { 
 	python ~/hacking/tools/dirsearch/dirsearch.py -u $1 -e $2 -t 50 -b 
 }
+
 
 checknxdomain() {
 	while read -r line; do
@@ -69,3 +77,14 @@ httpstatus() {
 		fi
 	done
 }	
+
+ipinfo() {
+	curl ipinfo.io/$1
+}
+
+rapiddns(){
+	curl -s "https://rapiddns.io/subdomain/$1?full=1" \
+	 | grep -oP '_blank">\K[^<]*' \
+	 | grep -v http \
+	 | sort -u
+}

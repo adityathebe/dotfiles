@@ -1,5 +1,16 @@
 #!/usr/bin/bash
 
+#####################
+# Clean up home dir #
+#####################
+export ZDOTDIR="$HOME/.config/zsh"
+export LESSHISTFILE="-"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export HISTFILE="$ZDOTDIR/.zhistory"
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+
 ############
 # PATH VAR #
 ############
@@ -26,10 +37,3 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 # Java Maven Repository
 export M2_HOME=$HOME/.m2/
 
-#####################
-# Clean up home dir #
-#####################
-export ZDOTDIR="$HOME/.config/zsh"
-export LESSHISTFILE="-"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"

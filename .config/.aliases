@@ -32,7 +32,7 @@ alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
 
 # Audio and video downloaders from spotify and youtube
 alias yta="youtube-dl --add-metadata -i -x --audio-format best"
-alias yt="youtube-dl --add-metadata -f 'bestvideo'"
+alias yt="youtube-dl --add-metadata -f 'bestvideo[ext=mp4]'"
 
 # speedtest: get a 100MB file via wget
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip" 
@@ -45,5 +45,9 @@ pyserver() {
 }
 
 fkill() {
-	ps aux | grep $1 | grep -v grep | cut -d ' ' -f 3 | xargs kill -9 
-}	
+	ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 
+}
+
+clean_docker_img() {
+	docker rmi $(docker images -f "dangling=true" -q)
+}
