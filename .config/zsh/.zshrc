@@ -26,8 +26,8 @@ plugins=(
 export ZSH="$HOME/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=10
 export DISABLE_AUTO_UPDATE=true
-export HISTSIZE=1500
-ENABLE_CORRECTION="false"
+ENABLE_CORRECTION=false
+DISABLE_MAGIC_FUNCTIONS=true
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
