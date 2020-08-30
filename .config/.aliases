@@ -40,14 +40,7 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 # Weather Report
 alias weather="curl https://wttr.in/kathmandu"
 
-pyserver() {
-	python -m http.server $1 --bind 127.0.0.1
-}
-
-fkill() {
-	ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 
-}
-
-clean_docker_img() {
-	docker rmi $(docker images -f "dangling=true" -q)
-}
+pyserver() { python -m http.server $1 --bind 127.0.0.1 }
+fkill() { ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 }
+clean_docker_img() { docker rmi $(docker images -f "dangling=true" -q) }
+unique() { awk '!seen[$0]++' }
