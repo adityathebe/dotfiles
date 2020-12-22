@@ -11,7 +11,8 @@ alias lg='ls -alF | grep'
 alias mkdir='mkdir -pv'
 alias digs='dig +short'
 alias songs='ncmpcpp'
-alias pcache='du -sh /var/cache/pacman/pkg/'
+alias pac_cache_size='du -sh /var/cache/pacman/pkg/'
+alias sudo='sudo '
 
 # Configs
 alias zshrc="vim ~/.config/zsh/.zshrc"
@@ -31,7 +32,7 @@ alias df='df -h'
 alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
 
 # Audio and video downloaders from spotify and youtube
-alias yta="youtube-dl --add-metadata -i -x --audio-format best"
+alias yta="youtube-dl --add-metadata -i -x --audio-format mp3"
 alias yt="youtube-dl --add-metadata -f 'bestvideo[ext=mp4]'"
 
 # speedtest: get a 100MB file via wget
@@ -40,7 +41,12 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 # Weather Report
 alias weather="curl https://wttr.in/kathmandu"
 
-pyserver() { python -m http.server $1 --bind 127.0.0.1 }
+# URL encode and decode
+alias urlencode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.quote_plus(l)) for l in sys.stdin]"'
+alias urldecode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.unquote_plus(l)) for l in sys.stdin]"'
+
+pyserver() { python -m http.server $1 --bind 0.0.0.0 }
 fkill() { ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 }
 clean_docker_img() { docker rmi $(docker images -f "dangling=true" -q) }
 unique() { awk '!seen[$0]++' }
+dirsize() { du -d 1 $1 | sort -h }
