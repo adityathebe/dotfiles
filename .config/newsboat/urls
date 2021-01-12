@@ -1,6 +1,7 @@
 ##################################
 # Hackers & Security Researchers #
 ##################################
+https://research.securitum.com/feed/ "~Securitum Research" bugbounty
 https://www.corben.io/feed.xml "~Corben" bugbounty
 https://anchor.fm/s/fff2ae4/podcast/rss "~Behind Bug Bounty [Podcast]" bugbounty
 https://medium.com/feed/@zseano "~zseano" bugbounty
@@ -17,6 +18,9 @@ https://www.arneswinnen.net/feed/ "~Arne Swinnen's Security Blog" bugbounty
 https://edoverflow.com/rss "~EdOverflow" bugbounty
 https://blog.innerht.ml/rss/ "~FileDescriptor" bugbounty
 http://blog.intothesymmetry.com/rss.xml "~Into The Symmetry - [Bug Hunter & oAuth expert]" bugbounty
+https://devcraft.io/feed.xml "~William Bowling (@vakzz)" bugbounty
+https://blog.witcoat.com/feed/ "~Witcoat" bugbounty
+http://www.economyofmechanism.com/feeds/all.atom.xml "~/Economy Of Mechanism [SAML Expert]" bugbounty
 #########################################################################
 
 https://bitcoindev.network/rss/ "~Bitcoin Dev Network"
@@ -25,8 +29,8 @@ https://robertheaton.com/feed.xml "~Robert Heaton | Privacy Guy"
 https://thesquareplanet.com/feed.xml "~Jon Gjengset | Rust Coder"
 https://www.joelonsoftware.com/feed/ "~Joel Spolsky"
 https://blog.codinghorror.com/rss/ "~Coding Horror"
-https://macwright.org/rss.xml "~Mac Wright"
 https://www.adityathebe.com/rss.xml "~Aditya"
 https://udemycoursedownloader.net/feed/
 https://jvns.ca/atom.xml "~Julia Evans"
 https://www.archlinux.org/feeds/news/ "~Arch Linux"
+https://www.rdegges.com/feed.xml "~Rdegges"
