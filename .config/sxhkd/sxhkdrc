@@ -5,7 +5,7 @@ super + x
   betterlockscreen --lock dim
 
 super + shift + x
-	betterlockscreen -s dim
+	betterlockscreen --suspend dim
 
 # function keys
 XF86AudioPlay
@@ -71,11 +71,14 @@ super + Print
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+super + alt + q
+	notify-send -t 1500 -u low "Quiting bspwm" && bspc quit
+
+super + alt + r
+	notify-send -t 1500 -u low "Restarting bspwm" && bspc wm -r
 
 super + ctrl + r
-	~/.config/polybar/polybar_launch.sh
+	notify-send -t 1500 -u low "Restarting polybar" && ~/.config/polybar/polybar_launch.sh
 
 # close and kill
 super + {_,shift + }q
