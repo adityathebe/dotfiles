@@ -31,7 +31,10 @@ alias rss="newsboat"
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com -4'
 alias du='du -ch'
 alias df='df -h'
-alias indiana="TZ=\":America/Indiana/Indianapolis\" date \"+%I:%M%P\""
+
+# Time in different places
+alias indiana='TZ=":America/Indiana/Indianapolis" date "+%I:%M%P"'
+alias cali='TZ=":America/Los_Angeles" date "+%I:%M%P"'
 
 # Audio and video downloaders from spotify and youtube
 alias yta="youtube-dl --add-metadata -i -x --audio-format mp3"
@@ -46,11 +49,6 @@ alias weather="curl https://wttr.in/kathmandu"
 # URL encode and decode
 alias urlencode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.quote_plus(l)) for l in sys.stdin]"'
 alias urldecode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.unquote_plus(l)) for l in sys.stdin]"'
-
-# NMAP
-alias nmap_open_ports="nmap --open"
-alias nmap_fast_all_ports="nmap -sV -sC -O -T4 -n -Pn -p- -oA fullfastscan"
-alias nmap_fast_1000_tcp="nmap -sV -sC -O -T4 -n -Pn -oA fastscan"
 
 pyserver() { python -m http.server $1 --bind 0.0.0.0 }
 fkill() { ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 }
@@ -68,8 +66,8 @@ add_album_art() {
 	done
 }
 
-tgo() {
-	# Set up a quick “tmp go” environment for testing;
+gonew() {
+	# Set up a quick go environment
 	# https://www.arp242.net/zshrc.html#playground-environment
 	dir="$HOME/go/src/github.com/adityathebe/$1"
 	[ -d "$dir" ] && echo "Directory $dir exists." && return 1
