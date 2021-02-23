@@ -25,7 +25,7 @@ alias polyconf='vim ~/.config/polybar/config'
 alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfilesGitBareRepo --work-tree=$HOME'
 
 # Applications
-alias open="pcmanfm"
+alias open="xdg-open"
 alias vim="nvim"
 alias rss="newsboat"
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com -4'
@@ -50,6 +50,10 @@ alias weather="curl https://wttr.in/kathmandu"
 alias urlencode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.quote_plus(l)) for l in sys.stdin]"'
 alias urldecode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.unquote_plus(l)) for l in sys.stdin]"'
 
+# Define directory shortcuts with hash -d so you can use 
+# cd ~x and vim ~x/file instead of cd /very/long/and/often/accessed/path. 
+hash -d p=$HOME/Projects
+
 pyserver() { python -m http.server $1 --bind 0.0.0.0 }
 fkill() { ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 }
 clean_docker_img() { docker rmi $(docker images -f "dangling=true" -q) }
@@ -72,14 +76,14 @@ gonew() {
 	dir="$HOME/go/src/github.com/adityathebe/$1"
 	[ -d "$dir" ] && echo "Directory $dir exists." && return 1
 
-	mkdir -p $dir
+	/usr/bin/mkdir -p $dir
 	printf 'package main\n\nfunc main() {\n\n}\n' > "$dir/main.go"
 	printf 'package main\n\nimport "testing\n\nfunc TestMain(t *testing.T) {\n\n}\n\n' > "$dir/main_test.go"
 	printf 'func BenchmarkMain(b *testing.B) {\n\tb.ReportAllocs()\n\tfor n := 0; n < b.N; n++ {\n\t}\n}\n' >> "$dir/main_test.go"
-
 	printf 'module github.com/adityathebe/%s\n' "$1" > "$dir/go.mod"
 	(
-			code $dir
-			echo "$dir"
+		code $dir
+		echo "$dir"
 	)
+	cd $dir
 }
