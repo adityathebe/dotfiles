@@ -27,7 +27,7 @@ XF86AudioMute
 	pulsemixer --toggle-mute
 
 # Volume
-super + v + {i, k}
+super + alt + {i, k}
 	pulsemixer --change-volume {5,-5}
 
 ######################
