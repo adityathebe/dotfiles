@@ -26,6 +26,10 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pulsemixer --toggle-mute
 
+# Volume
+super + v + {i, k}
+	pulsemixer --change-volume {5,-5}
+
 ######################
 ### Custom Scripts ###
 ######################
@@ -40,6 +44,9 @@ super + c
 
 super + b
 	bookmarks
+
+super + g
+	my-github-repo-opener
 
 #
 # wm independent hotkeys
