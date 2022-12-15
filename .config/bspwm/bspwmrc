@@ -1,15 +1,13 @@
 #! /bin/sh
 
-# Launch polybar
-$HOME/.config/polybar/polybar_launch.sh
-
 # monitor-setup
-# bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
-bspc monitor DP-3 -d I II III IV V VI VII VIII IX X
-bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor eDP-1 -d I II  IV V VI VII VIII  X
+bspc monitor DP-3 -d I II  IV V VI VII VIII  X
 
-bspc config border_width        3
-bspc config window_gap          8
+bspc config border_width        2
+bspc config window_gap          2
+bspc config bottom_padding			35 # Polybar
+# bspc config ignore_ewmh_focus true
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
@@ -17,15 +15,31 @@ bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
 
+# https://www.reddit.com/r/bspwm/comments/92bddw/how_to_move_desktops_after_disconnecting_a_monitor/e54emyi/
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+bspc config merge_overlapping_monitors true
+
+bspc rule -a install4j-burp-StartBurp='^1'
 bspc rule -a Brave-browser desktop='^2'
 bspc rule -a code-oss - OSS desktop=^3
 bspc rule -a jetbrains-idea desktop=^3
-bspc rule -a TelegramDesktop desktop=^9
 bspc rule -a vlc desktop=^4
-bspc rule -a Mailspring deskop=^5
-bspc rule -a mailspring deskop=^5
+bspc rule -a Mailspring desktop=^5 follow=off
+bspc rule -a sqlitebrowser desktop=^7
+bspc rule -a TelegramDesktop desktop=^9 follow=off
+bspc rule -a discord desktop=^10 follow=off
 
 bspc rule -a Zathura state=tiled
 
+##########################################
+# Programs to run after initiating bspwm #
+##########################################
+
 # Wallpaper
-feh --bg-fill ~/Pictures/current-wallpaper.jpg
+feh --bg-fill ~/Pictures/wallpaper.jpg
+
+# Launch polybar
+$HOME/.config/polybar/polybar_launch.sh
+
+monitor-setup

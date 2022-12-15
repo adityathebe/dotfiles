@@ -1,7 +1,0 @@
-[user]
-	email = thebeaditya@gmail.com
-	name = Aditya
-[core]
-	autocrlf = input
-[pull]
-	rebase = false

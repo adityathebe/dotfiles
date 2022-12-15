@@ -12,7 +12,6 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 
 # Plugins
 plugins=(
-  git
 	colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
@@ -23,11 +22,14 @@ plugins=(
 ###############
 # ZSH configs #
 ###############
-export ZSH="$HOME/.oh-my-zsh"
-export UPDATE_ZSH_DAYS=10
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 export DISABLE_AUTO_UPDATE=true
 ENABLE_CORRECTION=false
 DISABLE_MAGIC_FUNCTIONS=true
+
+# Hitory
+setopt hist_ignore_all_dups
+export HISTSIZE=20000
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
@@ -41,3 +43,18 @@ export ASDF_DATA_DIR="$HOME/.config/asdf"
 export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="$HOME/.config/asdf/tool-versions"
 export ASDF_CONFIG_FILE="$HOME/.config/asdf/.asdfrc"
 source $HOME/.config/asdf/asdf.sh
+
+# flyctl
+export FLYCTL_INSTALL="/home/gunners/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# GF [https://github.com/tomnomnom/gf]
+source /home/gunners/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh
+
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+# use the vi navigation keys in menu completion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history

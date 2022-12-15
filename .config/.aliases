@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Verbosity
+alias k9="killall -9"
 alias mv="mv -iv"
 alias cp="rsync -arh --progress"
 alias rm="rm -v"
@@ -14,12 +15,18 @@ alias songs='ncmpcpp'
 alias pac_cache_size='du -sh /var/cache/pacman/pkg/'
 alias sudo='sudo '
 alias -g gopath="$HOME/go/src/github.com/adityathebe"
+alias curldoh='curl --doh-url https://cloudflare-dns.com/dns-query'
+alias zzz='sudo systemctl suspend'
+
+# Git
+alias cdr='cd $(git rev-parse --show-toplevel)' # jumps to the root path of a git repository
+alias gca='git commit --amend'
 
 # Configs
 alias zshrc="vim ~/.config/zsh/.zshrc"
 alias aliases='vim ~/.config/.aliases'
 alias bspconf='vim ~/.config/bspwm/bspwmrc'
-alias polyconf='vim ~/.config/polybar/config'
+alias polyconf='vim ~/.config/polybar/config.ini'
 
 # Bare Git Repository Controller for dotfiles
 alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfilesGitBareRepo --work-tree=$HOME'
@@ -31,6 +38,7 @@ alias rss="newsboat"
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com -4'
 alias du='du -ch'
 alias df='df -h'
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" # Inorder to avoid history file in $HOME
 
 # Time in different places
 alias indiana='TZ=":America/Indiana/Indianapolis" date "+%I:%M%P"'
@@ -50,12 +58,14 @@ alias weather="curl https://wttr.in/kathmandu"
 alias urlencode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.quote_plus(l)) for l in sys.stdin]"'
 alias urldecode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.unquote_plus(l)) for l in sys.stdin]"'
 
+# Copy the img in the X clipboard to a file
+alias cpimg='xclip -selection clipboard -t image/png -o >'
+
 # Define directory shortcuts with hash -d so you can use 
 # cd ~x and vim ~x/file instead of cd /very/long/and/often/accessed/path. 
-hash -d p=$HOME/Projects
+hash -d P=$HOME/Projects
 
 pyserver() { python -m http.server $1 --bind 0.0.0.0 }
-fkill() { ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 }
 clean_docker_img() { docker rmi $(docker images -f "dangling=true" -q) }
 clean_docker_container() { docker container rm -f $(docker container ls -a -q) }
 unique() { awk '!seen[$0]++' }

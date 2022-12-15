@@ -26,8 +26,8 @@ am() {
 }
 
 am-active() {
-	target_dir="/home/gunners/hacking/targets/$1"
-	mkdir -p $target_dir
+  target_dir="/home/gunners/hacking/targets/$1"
+  mkdir -p $target_dir
 
   amass enum -active \
     -v \
@@ -39,11 +39,11 @@ am-active() {
 }
 
 am-domains() {
-	find . -name 'amass.json' | xargs cat | jq -crM ".name" | sort -u
+  find . -name 'amass.json' | xargs cat | jq -crM ".name" | sort -u
 }
 
 am-ips() {
-	find . -name 'amass.json' | xargs cat | jq -crM ".addresses[] .ip" | sort -u
+  find . -name 'amass.json' | xargs cat | jq -crM ".addresses[] .ip" | sort -u
 }
 #########################################################
 
@@ -52,8 +52,8 @@ af() {
 }
 
 gen_num() {
-	# Generate numbers in a given range with 0 padding
-	seq -f "%0$3g" $1 $2
+  # Generate numbers in a given range with 0 padding
+  seq -f "%0$3g" $1 $2
 }
 
 # whois() {
@@ -78,7 +78,7 @@ checkdomain() {
 }
 
 checknxdomain() {
-	# prints out nxdomains
+  # prints out nxdomains
   while read -r line; do
     x=$(dig $line)
     if [[ $x == *NXDOMAIN* ]]; then
@@ -87,9 +87,8 @@ checknxdomain() {
   done
 }
 
-
 filternxdomain() {
-	# prints out non nxdomains
+  # prints out non nxdomains
   while read -r line; do
     x=$(dig $line)
     if [[ $x != *NXDOMAIN* ]]; then
@@ -117,21 +116,25 @@ gitstrings() {
 }
 
 gitchangehist() {
-	git log --numstat |
-  awk '/^[0-9-]+/{ print $NF}' |
-  sort |
-  uniq -c |
-  sort -nr |
-  head
+  git log --numstat |
+    awk '/^[0-9-]+/{ print $NF}' |
+    sort |
+    uniq -c |
+    sort -nr |
+    head
 }
 
 ipinfo() {
   curl ipinfo.io/$1
 }
 
-
 chaos_projectdiscovery() {
   curl -s -H "Authorization: $CHAOS_APIKEY" https://dns.projectdiscovery.io/dns/$1/subdomains |
     jq -crM '.subdomains | . []' |
     sed -e "s/$/.$1/"
+}
+
+sync_hacking_targets() {
+	cd /home/gunners/hacking/subdomain-takeover;
+	rsync --checksum -ah --no-i-r --partial --inplace --append --info=progress2 dg:/home/gunners/subdomain-takeover/targets/ targets/
 }
