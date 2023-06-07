@@ -8,7 +8,7 @@ alias rm="rm -v"
 alias ls='ls -hN --color=auto --group-directories-first'
 alias ll='ls -l --color=auto --group-directories-first'
 alias lh='ls -alF --color=auto --group-directories-first'
-alias lg='ls -alF | grep'
+alias lg='ls -alF | grep -i'
 alias mkdir='mkdir -pv'
 alias digs='dig +short'
 alias songs='ncmpcpp'
@@ -17,10 +17,13 @@ alias sudo='sudo '
 alias -g gopath="$HOME/go/src/github.com/adityathebe"
 alias curldoh='curl --doh-url https://cloudflare-dns.com/dns-query'
 alias zzz='sudo systemctl suspend'
+alias downl='aria2c -c -x 8 -s 8'
+alias qrgen=' qrencode -t ANSI'
 
 # Git
 alias cdr='cd $(git rev-parse --show-toplevel)' # jumps to the root path of a git repository
 alias gca='git commit --amend'
+alias checkpoint='git add .; git commit -m "Checkpoint"' 
 
 # Configs
 alias zshrc="vim ~/.config/zsh/.zshrc"
@@ -41,12 +44,11 @@ alias df='df -h'
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" # Inorder to avoid history file in $HOME
 
 # Time in different places
-alias indiana='TZ=":America/Indiana/Indianapolis" date "+%I:%M%P"'
-alias cali='TZ=":America/Los_Angeles" date "+%I:%M%P"'
+alias cali='TZ=":America/Los_Angeles" date "+%I:%M%P %d %b"'
 
 # Audio and video downloaders from spotify and youtube
-alias yta="youtube-dl --add-metadata -i -x --audio-format mp3"
-alias yt="youtube-dl --add-metadata -f 'bestvideo[ext=mp4]'"
+alias yt="yt-dlp --add-metadata -f 'bestvideo[ext=mp4]'"
+alias yta="yt-dlp --downloader aria2c"
 
 # speedtest: get a 100MB file via wget
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip" 
@@ -63,7 +65,7 @@ alias cpimg='xclip -selection clipboard -t image/png -o >'
 
 # Define directory shortcuts with hash -d so you can use 
 # cd ~x and vim ~x/file instead of cd /very/long/and/often/accessed/path. 
-hash -d P=$HOME/Projects
+# hash -d P=$HOME/Projects
 
 pyserver() { python -m http.server $1 --bind 0.0.0.0 }
 clean_docker_img() { docker rmi $(docker images -f "dangling=true" -q) }
@@ -80,20 +82,10 @@ add_album_art() {
 	done
 }
 
-gonew() {
-	# Set up a quick go environment
-	# https://www.arp242.net/zshrc.html#playground-environment
-	dir="$HOME/go/src/github.com/adityathebe/$1"
-	[ -d "$dir" ] && echo "Directory $dir exists." && return 1
-
-	/usr/bin/mkdir -p $dir
-	printf 'package main\n\nfunc main() {\n\n}\n' > "$dir/main.go"
-	printf 'package main\n\nimport "testing\n\nfunc TestMain(t *testing.T) {\n\n}\n\n' > "$dir/main_test.go"
-	printf 'func BenchmarkMain(b *testing.B) {\n\tb.ReportAllocs()\n\tfor n := 0; n < b.N; n++ {\n\t}\n}\n' >> "$dir/main_test.go"
-	printf 'module github.com/adityathebe/%s\n' "$1" > "$dir/go.mod"
-	(
-		code $dir
-		echo "$dir"
-	)
-	cd $dir
+# portpid lists all the processes running on the given port
+portpid() {
+	sudo lsof -n -i :$1 | grep -i 'Listen'
 }
+
+alias ls="exa"
+alias cat="bat"

@@ -10,6 +10,11 @@ export SSH_AUTH_SOCK
 xsetroot -cursor_name left_ptr &
 
 # Display Power Management Signaling
+# dpms: Enable/disable Display Power Management Signaling
+# 0 0 0: Standby, Suspend and Off timeout values in seconds
+# b off: Turns off the bell
+# r rate: Set the keyboard auto repeat rate and delay
+# 500 30: The values for the auto repeat rate (characters per second) and delay (milliseconds).
 xset dpms 0 0 0 b off r rate 500 30
 
 # Screensaver

@@ -23,6 +23,7 @@ plugins=(
 # ZSH configs #
 ###############
 export ZSH="$XDG_DATA_HOME/oh-my-zsh"
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export DISABLE_AUTO_UPDATE=true
 ENABLE_CORRECTION=false
 DISABLE_MAGIC_FUNCTIONS=true
@@ -34,6 +35,7 @@ export HISTSIZE=20000
 source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
 source $HOME/.config/hacking_aliases.sh
+source $HOME/.config/kube_aliases.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
@@ -51,6 +53,9 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # GF [https://github.com/tomnomnom/gf]
 source /home/gunners/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh
 
+# Restic
+source $XDG_CONFIG_HOME/zsh/restic-zsh-completion
+
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 # use the vi navigation keys in menu completion
@@ -58,3 +63,6 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
+
+# Flanksource 
+source $HOME/Projects/flanksource/env.sh
