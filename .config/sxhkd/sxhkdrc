@@ -2,10 +2,11 @@ super + n
 	$TERMINAL -e ranger
 
 super + x
-  betterlockscreen --lock dim
+  betterlockscreen --lock dim --off 7200 & betterlockscreen -u ~/Pictures/lockscreens
 
 super + shift + x
-	betterlockscreen --suspend dim
+	systemctl suspend -i
+	# betterlockscreen --suspend dim & betterlockscreen -u ~/Pictures/lockscreens
 
 # function keys
 XF86AudioPlay
