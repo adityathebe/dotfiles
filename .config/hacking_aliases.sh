@@ -133,8 +133,3 @@ chaos_projectdiscovery() {
     jq -crM '.subdomains | . []' |
     sed -e "s/$/.$1/"
 }
-
-sync_hacking_targets() {
-	cd /home/gunners/hacking/subdomain-takeover;
-	rsync --checksum -ah --no-i-r --partial --inplace --append --info=progress2 dg:/home/gunners/subdomain-takeover/targets/ targets/
-}
