@@ -36,6 +36,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
 source $HOME/.config/hacking_aliases.sh
 source $HOME/.config/kube_aliases.sh
+source $HOME/.config/helm_auto_completion.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
@@ -65,4 +66,4 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Flanksource 
-source $HOME/Projects/flanksource/env.sh
+source $HOME/Projects/flanksource/local-setup/env.sh

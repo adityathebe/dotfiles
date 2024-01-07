@@ -3,7 +3,7 @@
 # Verbosity
 alias k9="killall -9"
 alias mv="mv -iv"
-alias cp="rsync -arh --progress"
+alias cp="rsync -azvhP"
 alias rm="rm -v"
 alias ls='ls -hN --color=auto --group-directories-first'
 alias ll='ls -l --color=auto --group-directories-first'
@@ -19,6 +19,10 @@ alias curldoh='curl --doh-url https://cloudflare-dns.com/dns-query'
 alias zzz='sudo systemctl suspend'
 alias downl='aria2c -c -x 8 -s 8'
 alias qrgen=' qrencode -t ANSI'
+
+# Program alternatives
+alias ls="eza"
+alias cat="bat"
 
 # Git
 alias cdr='cd $(git rev-parse --show-toplevel)' # jumps to the root path of a git repository
@@ -86,6 +90,3 @@ add_album_art() {
 portpid() {
 	sudo lsof -n -i :$1 | grep -i 'Listen'
 }
-
-alias ls="exa"
-alias cat="bat"
