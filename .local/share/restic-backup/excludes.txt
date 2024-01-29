@@ -1,13 +1,13 @@
-$HOME/.config/asdf
-$HOME/.config/BraveSoftware
-$HOME/.config/Chromium
-$HOME/.config/Code - OSS
-$HOME/.config/Code
-$HOME/.config/code-server
-$HOME/.config/discord
-$HOME/.config/Mailspring
-$HOME/.config/Slack
-$HOME/.config/go
-$HOME/.config/gops
-$HOME/.config/gcloud/logs
+/home/gunners/.config/asdf
+/home/gunners/.config/BraveSoftware
+/home/gunners/.config/Chromium
+/home/gunners/.config/Code - OSS
+/home/gunners/.config/Code
+/home/gunners/.config/code-server
+/home/gunners/.config/discord
+/home/gunners/.config/Mailspring
+/home/gunners/.config/Slack
+/home/gunners/.config/go
+/home/gunners/.config/gops
+/home/gunners/.config/gcloud/logs
 
