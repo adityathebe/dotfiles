@@ -1,0 +1,13 @@
+$HOME/.config/asdf
+$HOME/.config/BraveSoftware
+$HOME/.config/Chromium
+$HOME/.config/Code - OSS
+$HOME/.config/Code
+$HOME/.config/code-server
+$HOME/.config/discord
+$HOME/.config/Mailspring
+$HOME/.config/Slack
+$HOME/.config/go
+$HOME/.config/gops
+$HOME/.config/gcloud/logs
+
