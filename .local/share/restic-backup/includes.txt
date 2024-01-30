@@ -1,0 +1,9 @@
+/etc
+/root
+/boot
+/home/gunners/.config
+/home/gunners/.local/share/pacman-packages
+/home/gunners/.local/share/zsh
+/home/gunners/.local/share/applications
+/home/gunners/.local/share/fonts
+/home/gunners/.local/share/mime

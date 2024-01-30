@@ -11,3 +11,4 @@
 /home/gunners/.config/gops
 /home/gunners/.config/gcloud/logs
 
+/root/go
