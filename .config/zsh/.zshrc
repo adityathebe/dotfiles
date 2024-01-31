@@ -23,15 +23,53 @@ plugins=(
 # ZSH configs #
 ###############
 export ZSH="$XDG_DATA_HOME/oh-my-zsh"
-export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export DISABLE_AUTO_UPDATE=true
 ENABLE_CORRECTION=false
 DISABLE_MAGIC_FUNCTIONS=true
 
-# Hitory
-setopt hist_ignore_all_dups
-export HISTSIZE=20000
+##########
+# HISTORY
+# Credit: https://registerspill.thorstenball.com/p/which-command-did-you-run-1731-days
+##########
 
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export HISTSIZE=50000
+export SAVEHIST=50000
+
+# Immediately append to history file:
+setopt INC_APPEND_HISTORY
+
+# Record timestamp in history:
+setopt EXTENDED_HISTORY
+
+# Expire duplicate entries first when trimming history:
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Dont record an entry that was just recorded again:
+setopt HIST_IGNORE_DUPS
+
+# Delete old recorded entry if new entry is a duplicate:
+setopt HIST_IGNORE_ALL_DUPS
+
+# Do not display a line previously found:
+setopt HIST_FIND_NO_DUPS
+
+# Dont record an entry starting with a space:
+setopt HIST_IGNORE_SPACE
+
+# Dont write duplicate entries in the history file:
+setopt HIST_SAVE_NO_DUPS
+
+# Share history between all sessions:
+setopt SHARE_HISTORY
+
+# Execute commands using history (e.g.: using !$) immediatel:
+unsetopt HIST_VERIFY
+
+
+#############
+# Sources
+#############
 source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
 source $HOME/.config/hacking_aliases.sh
@@ -55,7 +93,8 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 source /home/gunners/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh
 
 # Restic
-source $XDG_CONFIG_HOME/zsh/restic-zsh-completion
+source <(restic generate --zsh-completion /dev/stdout --quiet)
+
 
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -67,3 +106,6 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Flanksource 
 source $HOME/Projects/flanksource/local-setup/env.sh
+
+# Atuin
+eval "$(atuin init zsh --disable-up-arrow)"

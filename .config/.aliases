@@ -67,6 +67,9 @@ alias urldecode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul
 # Copy the img in the X clipboard to a file
 alias cpimg='xclip -selection clipboard -t image/png -o >'
 
+alias sopse='sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)")'
+alias sopsd='sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)")'
+
 # Define directory shortcuts with hash -d so you can use 
 # cd ~x and vim ~x/file instead of cd /very/long/and/often/accessed/path. 
 # hash -d P=$HOME/Projects
