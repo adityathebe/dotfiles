@@ -11,4 +11,10 @@
 /home/gunners/.config/gops
 /home/gunners/.config/gcloud/logs
 
+/home/gunners/.local/share/go
+/home/gunners/.local/share/nvim
+/home/gunners/.local/share/nvim.bak
+/home/gunners/.local/share/TelegramDesktop/
+/home/gunners/.local/share/.codeium/
+
 /root/go
