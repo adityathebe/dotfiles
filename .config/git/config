@@ -1,0 +1,11 @@
+[user]
+	email = thebeaditya@gmail.com
+	name = Aditya Thebe
+[core]
+	autocrlf = input
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
+[pager]
+	branch = false
