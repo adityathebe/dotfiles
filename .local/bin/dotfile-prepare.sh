@@ -31,6 +31,7 @@ list=(
   "$home/.config/kube_aliases.sh"
   "$home/.config/mpd/mpd.conf"
   "$home/.config/mpv/mpv.conf"
+  "$home/.config/mpv/input.conf"
   "$home/.config/ncmpcpp/bindings"
   "$home/.config/ncmpcpp/config"
   "$home/.config/neofetch/config.conf"
