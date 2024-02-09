@@ -2,10 +2,11 @@
 	email = contact@adityathebe.com
 	name = Aditya Thebe
 [core]
+	# tell Git to convert CRLF to LF on commit but not the other way around
 	autocrlf = input
 [pull]
 	rebase = true
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [pager]
 	branch = false

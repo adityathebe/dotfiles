@@ -20,14 +20,10 @@ bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
 
-bspc rule -a install4j-burp-StartBurp='^1'
 bspc rule -a Brave-browser desktop='^2'
 bspc rule -a Code - OSS desktop=^3
-bspc rule -a jetbrains-idea desktop=^3
 bspc rule -a vlc desktop=^4
 bspc rule -a mpv desktop=^4
-bspc rule -a Mailspring desktop=^5 follow=off
-bspc rule -a sqlitebrowser desktop=^7
 bspc rule -a TelegramDesktop desktop=^9 follow=off
 bspc rule -a discord desktop=^10 follow=off
 

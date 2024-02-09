@@ -13,10 +13,10 @@ WINIT_X11_SCALE_FACTOR = "1"
 size = 11
 
 [font.bold]
-family = "Hack"
+family = "JetBrains Mono"
 
 [font.normal]
-family = "Fira Code"
+family = "JetBrains Mono"
 style = "Regular"
 
 [[keyboard.bindings]]

@@ -40,13 +40,12 @@ https://cprss.s3.amazonaws.com/golangweekly.com.xml "~Golang Weekly"
 #########################################################################
 
 https://registerspill.thorstenball.com/feed
-# https://blog.bytebytego.com/feed "~Bytebytego" # Too many feeds
 https://architecturenotes.co/rss/ "~Architecture Notes"
 https://robertheaton.com/feed.xml "~Robert Heaton | Privacy Guy"
-# https://thesquareplanet.com/feed.xml "~Jon Gjengset | Rust Coder"
+https://thesquareplanet.com/feed.xml "~Jon Gjengset | Rust Coder"
 https://www.joelonsoftware.com/feed/ "~Joel Spolsky"
 https://blog.codinghorror.com/rss/ "~Coding Horror | Jeff Atwood"
-# https://www.adityathebe.com/rss.xml "~My Blog"
+https://www.adityathebe.com/rss.xml "~My Blog"
 https://jvns.ca/atom.xml "~Julia Evans"
 https://www.archlinux.org/feeds/news/ "~Arch Linux"
 https://www.rdegges.com/feed.xml "~Rdegges"
