@@ -1,0 +1,148 @@
+{
+  "breadcrumbs.enabled": true,
+  "cody.commandCodeLenses": false,
+  "cody.telemetry.level": "off",
+  "cSpell.userWords": ["flanksource", "gitops", "plpgsql", "shoutrrr"],
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontFamily": "JetBrains Mono, Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "300",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": false,
+  "editor.indentSize": "tabSize",
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
+  "editor.renderLineHighlight": "none",
+  "editor.stickyScroll.defaultModel": "foldingProviderModel",
+  "editor.stickyScroll.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+  "explorer.openEditors.visible": 1,
+  "extensions.ignoreRecommendations": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "never",
+  "go.testFlags": ["-count=1", "-v"],
+  "go.toolsManagement.autoUpdate": true,
+  "html.format.enable": false,
+  "prettier.arrowParens": "avoid",
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "redhat.telemetry.enabled": true,
+  "sql-formatter.dialect": "postgresql",
+  "sql-formatter.uppercase": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.fontFamily": "JetBrains Mono, MesloLGS NF", // MesloLGS NF for icon rendering
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "normal",
+  "typescript.format.enable": false,
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Nord",
+  "workbench.preferredDarkColorTheme": "Visual Studio Light",
+  "workbench.preferredHighContrastColorTheme": "Visual Studio Light",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.tree.enableStickyScroll": true,
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "graphql",
+    "handlebars",
+    "haskell",
+    "html",
+    "json",
+    "text",
+    "yaml",
+    "yml"
+  ],
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gopls": {
+    "ui.semanticTokens": false
+  },
+  "go.delveConfig": {
+    "dlvLoadConfig": {
+      "maxStringLen": 5900
+    },
+    "apiVersion": 2
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[hcl]": {
+    "editor.defaultFormatter": "fredwangwang.vscode-hcl-format"
+  },
+  "vs-kubernetes": {
+    "vs-kubernetes.crd-code-completion": "enabled"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.fontFamily": "JetBrains Mono, Fira Code",
+  "debug.console.fontFamily": "JetBrains Mono, Fira Code",
+  "scm.inputFontFamily": "JetBrains Mono, Fira Code",
+  "notebook.output.fontFamily": "JetBrains Mono, Fira Code",
+  "chat.editor.fontFamily": "JetBrains Mono, Fira Code"
+}

@@ -22,6 +22,7 @@ list=(
   "$home/.config/betterlockscreenrc"
   "$home/.config/bottom/bottom.toml"
   "$home/.config/bspwm/bspwmrc"
+  "$home/.config/Code/User/profiles/-756faeda/settings.json"
   "$home/.config/dunst/dunstrc"
   "$home/.config/env"
   "$home/.config/fontconfig/10-powerline-symbols.conf"
