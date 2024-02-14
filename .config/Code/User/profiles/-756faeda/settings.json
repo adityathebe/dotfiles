@@ -144,5 +144,10 @@
   "debug.console.fontFamily": "JetBrains Mono, Fira Code",
   "scm.inputFontFamily": "JetBrains Mono, Fira Code",
   "notebook.output.fontFamily": "JetBrains Mono, Fira Code",
-  "chat.editor.fontFamily": "JetBrains Mono, Fira Code"
+  "chat.editor.fontFamily": "JetBrains Mono, Fira Code",
+  "prettier.semi": false,
+  "codeium.enableCodeLens": false,
+  "githd.logView.displayExpressStatus": false,
+  "githd.logView.expressMode": true,
+  "githd.blameView.enabled": false
 }

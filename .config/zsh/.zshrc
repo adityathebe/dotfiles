@@ -83,16 +83,6 @@ source /home/gunners/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.z
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# ASDF Version Manager
-export ASDF_DATA_DIR="$HOME/.config/asdf"
-export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="$HOME/.config/asdf/tool-versions"
-export ASDF_CONFIG_FILE="$HOME/.config/asdf/.asdfrc"
-source $HOME/.config/asdf/asdf.sh
-
-# flyctl
-export FLYCTL_INSTALL="/home/gunners/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
-
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 
