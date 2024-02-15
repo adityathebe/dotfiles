@@ -1,6 +1,7 @@
 [user]
 	email = contact@adityathebe.com
 	name = Aditya Thebe
+	signingkey = E10E3DDC3AA42449D92EF6E1D6600D223C7E34E8
 [core]
 	# tell Git to convert CRLF to LF on commit but not the other way around
 	autocrlf = input
@@ -10,3 +11,5 @@
 	defaultBranch = main
 [pager]
 	branch = false
+[commit]
+	gpgsign = true
