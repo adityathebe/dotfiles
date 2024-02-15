@@ -35,10 +35,6 @@ super + alt + shift + m
 super + alt + {j, k}
 	pulsemixer --change-volume {-5,5}
 
-# Network menu
-super + alt + n
-	$HOME/.config/rofi/bin/menu_network
-
 ######################
 ### Custom Scripts ###
 ######################
@@ -47,10 +43,6 @@ super + u
 
 super + m
 	list-songs
-
-# Mpd applet
-super + alt + m
-    $HOME/.config/rofi/bin/menu_mpd
 
 super + b
 	bookmarks
@@ -69,7 +61,6 @@ super + Return
 # program launcher
 super + d
     $HOME/.config/rofi/bin/launcher_text
-
 
 # make sxhkd reload its configuration files:
 super + Escape

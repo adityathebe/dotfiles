@@ -5,7 +5,6 @@ set -e
 home='/home/gunners'
 dotfile="/usr/bin/git --git-dir=$home/.dotfilesGitBareRepo --work-tree=$home"
 list=(
-  "$home/.profile"
   "$home/.xinitrc"
   "$home/.xprofile"
   "$home/README.md"
@@ -46,6 +45,8 @@ list=(
   "$home/.config/transmission-daemon/settings.json"
   "$home/.config/wget/wgetrc"
   "$home/.config/zathura/zathurarc"
+  "$home/.config/rofi/config.rasi"
+  "$home/.config/sxhkd/sxhkdrc"
   "$home/.config/zsh/.zprofile"
   "$home/.config/zsh/.zshrc"
 )
