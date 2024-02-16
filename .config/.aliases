@@ -26,8 +26,11 @@ alias cat="bat"
 
 # Git
 alias cdr='cd $(git rev-parse --show-toplevel)' # jumps to the root path of a git repository
+alias gb='git branch'
 alias gca='git commit --amend'
-alias checkpoint='git add .; git commit -m "Checkpoint"' 
+alias gco='git checkout'
+alias gl='git log --pretty=format:"%C(auto)%h%x09%C(blue)%an%x09%C(auto)%ad%x09%C(red)%s"'
+alias grh='git reset --hard'
 
 # Configs
 alias zshrc="vim ~/.config/zsh/.zshrc"
