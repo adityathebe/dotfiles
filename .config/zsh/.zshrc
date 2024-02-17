@@ -76,6 +76,7 @@ source $HOME/.config/hacking_aliases.sh
 source $HOME/.config/kube_aliases.sh
 
 ## Auto completitions
+source <(atuin gen-completions --shell zsh)
 source <(helm completion zsh)
 source <(restic generate --zsh-completion /dev/stdout --quiet)
 source /home/gunners/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh # [https://github.com/tomnomnom/gf]
@@ -97,3 +98,6 @@ source $HOME/Projects/flanksource/local-setup/env.sh
 
 # Atuin
 eval "$(atuin init zsh --disable-up-arrow)"
+
+# Direnv
+eval "$(direnv hook zsh)"

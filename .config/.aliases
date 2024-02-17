@@ -30,7 +30,9 @@ alias gb='git branch'
 alias gca='git commit --amend'
 alias gco='git checkout'
 alias gl='git log --pretty=format:"%C(auto)%h%x09%C(blue)%an%x09%C(auto)%ad%x09%C(red)%s"'
+alias gp='git push'
 alias grh='git reset --hard'
+alias gu='git reset HEAD' # unstage a file
 
 # Configs
 alias zshrc="vim ~/.config/zsh/.zshrc"

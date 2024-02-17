@@ -149,5 +149,9 @@
   "codeium.enableCodeLens": false,
   "githd.logView.displayExpressStatus": false,
   "githd.logView.expressMode": true,
-  "githd.blameView.enabled": false
+  "githd.blameView.enabled": false,
+  "codeium.enableConfig": {
+    "*": true,
+    "markdown": true
+  }
 }

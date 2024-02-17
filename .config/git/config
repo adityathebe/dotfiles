@@ -2,14 +2,37 @@
 	email = contact@adityathebe.com
 	name = Aditya Thebe
 	signingkey = E10E3DDC3AA42449D92EF6E1D6600D223C7E34E8
+
 [core]
 	# tell Git to convert CRLF to LF on commit but not the other way around
 	autocrlf = input
+	editor = vim
+	pager = bat
+
 [pull]
 	rebase = true
+
+[push]
+	# assume --set-upstream on default push when no upstream tracking exists for the current branch
+	autoSetupRemote = true
+	# always push the local branch to a remote branch with the same name.
+	default = current
+
 [init]
 	defaultBranch = main
+
 [pager]
 	branch = false
+
 [commit]
 	gpgsign = true
+
+[merge]
+	# https://jvns.ca/blog/2024/02/16/popular-git-config-options/#merge-conflictstyle-zdiff3
+	conflictstyle = zdiff3
+
+[diff]
+	algorithm = histogram
+
+[commit]
+	verbose = true
