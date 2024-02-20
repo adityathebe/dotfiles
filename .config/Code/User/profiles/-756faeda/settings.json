@@ -54,6 +54,7 @@
   "cSpell.enabledLanguageIds": [
     "asciidoc",
     "graphql",
+    "markdown",
     "handlebars",
     "haskell",
     "html",
@@ -152,6 +153,11 @@
   "githd.blameView.enabled": false,
   "codeium.enableConfig": {
     "*": true,
-    "markdown": true
-  }
+    "markdown": true,
+    "properties": true
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "cSpell.languageSettings": [
+
+  ]
 }

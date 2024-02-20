@@ -34,7 +34,8 @@ bspc rule -a Zathura state=tiled
 ##########################################
 
 # Wallpaper
-feh --bg-fill ~/Pictures/wallpaper.jpg
+feh --bg-fill ~/Pictures/wallpapers/go-gopher.png
+
 
 # Launch polybar
 $HOME/.config/polybar/polybar_launch.sh

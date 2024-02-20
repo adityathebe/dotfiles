@@ -1,13 +1,19 @@
 [user]
 	email = contact@adityathebe.com
 	name = Aditya Thebe
-	signingkey = E10E3DDC3AA42449D92EF6E1D6600D223C7E34E8
+	signingkey = ~/.ssh/adityathebe.pub
+
+[gpg]
+	format = ssh # use SSH keys to sign instead of gpg keys. So I only have to maintain one key.
 
 [core]
 	# tell Git to convert CRLF to LF on commit but not the other way around
 	autocrlf = input
 	editor = vim
 	pager = bat
+
+[branch]
+	sort = -committerdate
 
 [pull]
 	rebase = true
@@ -36,3 +42,7 @@
 
 [commit]
 	verbose = true
+
+# Remember merge conlict resolutions
+[rerere]
+	enabled = true
