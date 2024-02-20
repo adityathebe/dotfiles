@@ -1,3 +1,8 @@
+[alias]
+	# better git branch
+	# source: https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff
+	bb = !~/.config/git/better-git-branch.sh
+
 [user]
 	email = contact@adityathebe.com
 	name = Aditya Thebe

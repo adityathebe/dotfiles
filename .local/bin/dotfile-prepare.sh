@@ -27,6 +27,7 @@ list=(
   "$home/.config/fontconfig/10-powerline-symbols.conf"
   "$home/.config/fontconfig/fonts.conf"
   "$home/.config/git/config"
+  "$home/.config/git/better-git-branch.sh"
   "$home/.config/hacking_aliases.sh"
   "$home/.config/kube_aliases.sh"
   "$home/.config/mpd/mpd.conf"
