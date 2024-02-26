@@ -2,6 +2,7 @@
 
 # Verbosity
 alias k9="killall -9"
+alias k15="killall -15"
 alias mv="mv -iv"
 alias cp="rsync -azvhP"
 alias rm="rm -v"
@@ -19,6 +20,7 @@ alias curldoh='curl --doh-url https://cloudflare-dns.com/dns-query'
 alias zzz='sudo systemctl suspend'
 alias downl='aria2c -c -x 8 -s 8'
 alias qrgen=' qrencode -t ANSI'
+alias xcp='xclip -selection clipboard'
 
 # Program alternatives
 alias ls="eza"
@@ -29,7 +31,6 @@ alias cdr='cd $(git rev-parse --show-toplevel)' # jumps to the root path of a gi
 alias gb='git branch'
 alias gca='git commit --amend'
 alias gco='git checkout'
-alias gl='git log --pretty=format:"%C(auto)%h%x09%C(blue)%an%x09%C(auto)%ad%x09%C(red)%s"'
 alias gp='git push'
 alias grh='git reset --hard'
 alias gu='git reset HEAD' # unstage a file

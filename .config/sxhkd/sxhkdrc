@@ -41,9 +41,6 @@ super + alt + {j, k}
 super + u
 	emoji-selector
 
-super + m
-	list-songs
-
 super + b
 	bookmarks
 

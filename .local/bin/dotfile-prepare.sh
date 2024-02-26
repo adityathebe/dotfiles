@@ -12,6 +12,8 @@ list=(
   "$home/.local/bin/dotfile-prepare.sh"
   "$home/.local/bin/statusbar"
   "$home/.local/bin/transmission-add-torrent"
+  "$home/.local/bin/list-songs"
+  "$home/.local/bin/my-github-repo-opener"
   "$home/.local/share/applications/torrent.desktop"
   "$home/.local/share/restic-backup"
   

@@ -33,8 +33,8 @@ DISABLE_MAGIC_FUNCTIONS=true
 ##########
 
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
-export HISTSIZE=50000
-export SAVEHIST=50000
+export HISTSIZE=500000000
+export SAVEHIST=500000000
 
 # Immediately append to history file:
 setopt INC_APPEND_HISTORY

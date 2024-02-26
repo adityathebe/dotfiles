@@ -2,6 +2,7 @@
 	# better git branch
 	# source: https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff
 	bb = !~/.config/git/better-git-branch.sh
+	l = log --pretty=format:"%C(auto)%h%x09%C(blue)%an%x09%C(auto)%ad%x09%C(red)%s"
 
 [user]
 	email = contact@adityathebe.com

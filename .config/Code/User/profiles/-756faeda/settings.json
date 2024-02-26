@@ -1,7 +1,5 @@
 {
   "breadcrumbs.enabled": true,
-  "cody.commandCodeLenses": false,
-  "cody.telemetry.level": "off",
   "cSpell.userWords": ["flanksource", "gitops", "plpgsql", "shoutrrr"],
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
