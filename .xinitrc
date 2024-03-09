@@ -2,6 +2,9 @@
 
 [ -f "$HOME/.config/env" ] && source "$HOME/.config/env"
 
+# Map CAPS to CTRL
+setxkbmap -option ctrl:ctrl_modifier
+
 # Start the gnome-keyring-daemon from xinitrc
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
@@ -15,7 +18,7 @@ xsetroot -cursor_name left_ptr &
 # b off: Turns off the bell
 # r rate: Set the keyboard auto repeat rate and delay
 # 500 30: The values for the auto repeat rate (characters per second) and delay (milliseconds).
-xset dpms 0 0 0 b off r rate 500 30
+xset dpms 0 0 0 b off r rate 250 50
 
 # Screensaver
 xset s 0

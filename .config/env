@@ -39,7 +39,6 @@ export PATH="$PATH:$XDG_DATA_HOME/go/bin"
 export TERMINAL="alacritty"
 export GIT_EDITOR="nvim"
 export EDITOR="nvim"
-export BROWSER="brave"
 
 ########################
 # APPLICATION SPECIFIC #

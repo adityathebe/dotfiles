@@ -2,7 +2,12 @@
 	# better git branch
 	# source: https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff
 	bb = !~/.config/git/better-git-branch.sh
+
+	# better log
 	l = log --pretty=format:"%C(auto)%h%x09%C(blue)%an%x09%C(auto)%ad%x09%C(red)%s"
+
+	# show the top 10 most changed files in order
+  changehist = !git log --numstat | awk '/^[0-9-]+/{ print $NF}' | sort | uniq -c | sort -nr | head -n 10
 
 [user]
 	email = contact@adityathebe.com

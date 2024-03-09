@@ -37,7 +37,6 @@ list=(
   "$home/.config/mpv/input.conf"
   "$home/.config/ncmpcpp/bindings"
   "$home/.config/ncmpcpp/config"
-  "$home/.config/neofetch/config.conf"
   "$home/.config/newsboat/config"
   "$home/.config/newsboat/urls"
   "$home/.config/picom/picom.conf"

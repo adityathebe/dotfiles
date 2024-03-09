@@ -22,6 +22,9 @@ alias downl='aria2c -c -x 8 -s 8'
 alias qrgen=' qrencode -t ANSI'
 alias xcp='xclip -selection clipboard'
 
+# Alias watch to itself so it works with other aliases. Pretty cool actually.
+alias watch='watch '
+
 # Program alternatives
 alias ls="eza"
 alias cat="bat"

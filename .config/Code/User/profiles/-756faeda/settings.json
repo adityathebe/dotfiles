@@ -4,7 +4,7 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.fontFamily": "JetBrains Mono, Fira Code",
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": false,
   "editor.fontWeight": "300",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
@@ -157,5 +157,8 @@
   "workbench.iconTheme": "vscode-icons",
   "cSpell.languageSettings": [
 
-  ]
+  ],
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

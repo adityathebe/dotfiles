@@ -115,15 +115,6 @@ gitstrings() {
   } | while read o; do git cat-file -p $o; done
 }
 
-gitchangehist() {
-  git log --numstat |
-    awk '/^[0-9-]+/{ print $NF}' |
-    sort |
-    uniq -c |
-    sort -nr |
-    head
-}
-
 ipinfo() {
   curl ipinfo.io/$1
 }
