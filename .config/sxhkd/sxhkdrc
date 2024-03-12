@@ -1,5 +1,5 @@
 super + n
-	$TERMINAL -e ranger
+	$TERMINAL -e yazi
 
 super + x
   betterlockscreen --lock dim --off 7200 & betterlockscreen -u ~/Pictures/lockscreens

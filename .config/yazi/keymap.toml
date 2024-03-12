@@ -1,0 +1,12 @@
+[manager]
+
+append_keymap = [
+  { on = [ "g", "m" ], run = "cd /mnt/portainer/media/movies/", desc = "Go to movies directory" },
+  { on = [ "c", "d" ], run = "cd --interactive", desc = "Go to a directory interactively" },
+  { on = [ "<C-c>" ],  run = "escape",         desc = "Go back the normal mode, or cancel input" },
+]
+
+[input]
+append_keymap = [
+  { on = [ "<C-c>" ],  run = "escape",         desc = "Go back the normal mode, or cancel input" },
+]

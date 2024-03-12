@@ -7,6 +7,14 @@ fi
 
 export LANG="en_US.UTF-8"
 
+# Basic auto/table completion
+# autoload -U compinit && compinit
+# zstyle ':completion:*' menu select
+# zmodload zsh/complist
+#
+# # show hidden files during auto completion
+# _comp_options+=(globdots)
+
 # Themes
 ZSH_THEME=powerlevel10k/powerlevel10k
 
@@ -17,6 +25,7 @@ plugins=(
   zsh-autosuggestions
 	history
 	systemd
+	vi-mode
 )
 
 ###############
@@ -66,7 +75,6 @@ setopt SHARE_HISTORY
 # Execute commands using history (e.g.: using !$) immediatel:
 unsetopt HIST_VERIFY
 
-
 #############
 # Sources
 #############
@@ -84,8 +92,6 @@ source /home/gunners/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.z
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-zstyle ':completion:*' menu select
-zmodload zsh/complist
 
 # use the vi navigation keys in menu completion
 bindkey -M menuselect 'h' vi-backward-char
@@ -101,3 +107,6 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 # Direnv
 eval "$(direnv hook zsh)"
+
+# Zoxide
+eval "$(zoxide init zsh)"

@@ -1,0 +1,4 @@
+[manager]
+sort_by = "created"
+sort_dir_first = true
+linemode = "size"
