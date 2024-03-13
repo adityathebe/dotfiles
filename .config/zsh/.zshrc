@@ -26,6 +26,7 @@ plugins=(
 	history
 	systemd
 	vi-mode
+	you-should-use
 )
 
 ###############

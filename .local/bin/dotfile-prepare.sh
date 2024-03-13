@@ -7,7 +7,8 @@ dotfile="/usr/bin/git --git-dir=$home/.dotfilesGitBareRepo --work-tree=$home"
 list=(
   "$home/.xinitrc"
   "$home/.xprofile"
-  "$home/README.md"
+  "$home/.zshenv"
+  "$home/.github"
 
   "$home/.local/bin/dotfile-prepare.sh"
   "$home/.local/bin/statusbar"
@@ -52,6 +53,7 @@ list=(
 
   # zsh
   "$home/.config/zsh/.zprofile"
+  "$home/.config/zsh/.p10k.zsh"
   "$home/.config/zsh/.zshrc"
 
   # Yazi
