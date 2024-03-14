@@ -152,7 +152,9 @@
   "codeium.enableConfig": {
     "*": true,
     "markdown": true,
-    "properties": true
+    "properties": true,
+    "helm": true,
+    "mdx": true
   },
   "workbench.iconTheme": "vscode-icons",
   "cSpell.languageSettings": [

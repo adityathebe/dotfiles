@@ -27,6 +27,7 @@ list=(
   "$home/.config/bspwm/bspwmrc"
   "$home/.config/dunst/dunstrc"
   "$home/.config/env"
+  "$home/.config/fastfetch/config.jsonc"
   "$home/.config/fontconfig/10-powerline-symbols.conf"
   "$home/.config/fontconfig/fonts.conf"
   "$home/.config/git/better-git-branch.sh"

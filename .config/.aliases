@@ -34,9 +34,9 @@ alias cdr='cd $(git rev-parse --show-toplevel)' # jumps to the root path of a gi
 alias gb='git branch'
 alias gca='git commit --amend'
 alias gco='git checkout'
-alias gp='git push'
 alias grh='git reset --hard'
 alias gu='git reset HEAD' # unstage a file
+alias gfp='git fetch --prune'
 
 # Configs
 alias zshrc="vim ~/.config/zsh/.zshrc"
