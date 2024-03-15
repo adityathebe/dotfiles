@@ -1,33 +1,37 @@
-#!/bin/bash
+#!/bin/env bash
 
-# Verbosity
-alias k9="killall -9"
-alias k15="killall -15"
-alias mv="mv -iv"
-alias cp="rsync -azvhP"
-alias rm="rm -v"
-alias ls='ls -hN --color=auto --group-directories-first'
-alias ll='ls -l --color=auto --group-directories-first'
-alias lh='ls -alF --color=auto --group-directories-first'
-alias lg='ls -alF | grep -i'
-alias mkdir='mkdir -pv'
-alias digs='dig +short'
-alias songs='ncmpcpp'
-alias pac_cache_size='du -sh /var/cache/pacman/pkg/'
-alias sudo='sudo '
-alias -g gopath="$HOME/go/src/github.com/adityathebe"
-alias curldoh='curl --doh-url https://cloudflare-dns.com/dns-query'
-alias zzz='sudo systemctl suspend'
+# Brevity
+alias df='df -h'
 alias downl='aria2c -c -x 8 -s 8'
+alias du='du -ch'
+alias ff='fastfetch'
+alias k15="killall -15"
+alias k9="killall -9"
+alias lg='ls -alF | rg -i'
+alias lh='ls -alF --color=auto --group-directories-first'
+alias ll='ls -l --color=auto --group-directories-first'
+alias ls='ls -hN --color=auto --group-directories-first'
+alias mkdir='mkdir -v'
+alias mv="mv -iv"
+alias open="xdg-open"
+alias pac_cache_size='du -sh /var/cache/pacman/pkg/'
 alias qrgen=' qrencode -t ANSI'
+alias rm="rm -v"
+alias rss="newsboat"
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" # Inorder to avoid history file in $HOME
 alias xcp='xclip -selection clipboard'
+alias zzz='sudo systemctl suspend'
 
-# Alias watch to itself so it works with other aliases. Pretty cool actually.
+# Enforce alias expansion.
+# 	A trailing space in VALUE causes the next word to be checked for alias 
+# 	substitution when the alias is expanded
+alias sudo='sudo ' 
 alias watch='watch '
 
 # Program alternatives
 alias ls="eza"
 alias cat="bat"
+alias vim="nvim"
 
 # Git
 alias cdr='cd $(git rev-parse --show-toplevel)' # jumps to the root path of a git repository
@@ -38,30 +42,26 @@ alias grh='git reset --hard'
 alias gu='git reset HEAD' # unstage a file
 alias gfp='git fetch --prune'
 
-# Configs
-alias zshrc="vim ~/.config/zsh/.zshrc"
+# Edit commonly updated configs
 alias aliases='vim ~/.config/.aliases'
 alias bspconf='vim ~/.config/bspwm/bspwmrc'
 alias polyconf='vim ~/.config/polybar/config.ini'
+alias zshrc="vim ~/.config/zsh/.zshrc"
 
 # Bare Git Repository Controller for dotfiles
 alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfilesGitBareRepo --work-tree=$HOME'
 
-# Applications
-alias open="xdg-open"
-alias vim="nvim"
-alias rss="newsboat"
-alias publicip='dig +short myip.opendns.com @resolver1.opendns.com -4'
-alias du='du -ch'
-alias df='df -h'
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" # Inorder to avoid history file in $HOME
-
 # Time in different places
 alias cali='TZ=":America/Los_Angeles" date "+%I:%M%P %d %b"'
+alias israel='TZ=":Asia/Jerusalem" date "+%I:%M%P %d %b"'
+alias sydney='TZ=":Australia/Sydney" date "+%I:%M%P %d %b"'
 
-# Audio and video downloaders from spotify and youtube
+# Video downloaders
 alias yt="yt-dlp --add-metadata -f 'bestvideo[ext=mp4]'"
 alias yta="yt-dlp --downloader aria2c"
+
+# Use DNS to get the public IP
+alias publicip='dig +short myip.opendns.com @resolver1.opendns.com -4'
 
 # speedtest: get a 100MB file via wget
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip" 
@@ -76,6 +76,7 @@ alias urldecode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul
 # Copy the img in the X clipboard to a file
 alias cpimg='xclip -selection clipboard -t image/png -o >'
 
+# Sops easy encrypt/decrypt
 alias sopse='sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)")'
 alias sopsd='sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)")'
 
@@ -87,7 +88,6 @@ pyserver() { python -m http.server $1 --bind 0.0.0.0 }
 clean_docker_img() { docker rmi $(docker images -f "dangling=true" -q) }
 clean_docker_container() { docker container rm -f $(docker container ls -a -q) }
 unique() { awk '!seen[$0]++' }
-dirsize() { du -d 1 $1 | sort -h }
 topcmds() { history | awk '{print $2}' | sort | uniq -c | sort -bgr | head -n 25 }
 
 ## Fmpeg Script to add album cover to all files in the current directory
