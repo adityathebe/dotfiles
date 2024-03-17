@@ -15,7 +15,9 @@ list=(
   "$home/.local/bin/transmission-add-torrent"
   "$home/.local/bin/list-songs"
   "$home/.local/bin/my-github-repo-opener"
+
   "$home/.local/share/applications/torrent.desktop"
+  "$home/.local/share/restic-backup"
   "$home/.local/share/restic-backup"
   
   "$home/.config/.aliases"
@@ -45,6 +47,7 @@ list=(
   "$home/.config/polybar/config.ini"
   "$home/.config/polybar/polybar_launch.sh"
   "$home/.config/rofi/config.rasi"
+  "$home/.config/rofi/nord.rasi"
   "$home/.config/sxhkd/sxhkdrc"
   "$home/.config/sxhkd/sxhkdrc"
   "$home/.config/tmux/tmux.conf"

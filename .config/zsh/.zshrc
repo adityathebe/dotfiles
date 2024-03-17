@@ -113,4 +113,7 @@ eval "$(direnv hook zsh)"
 # Zoxide
 eval "$(zoxide init zsh)"
 
-fastfetch
+if [ "$TERM_PROGRAM" != "vscode" ]; then
+	fastfetch
+fi
+
