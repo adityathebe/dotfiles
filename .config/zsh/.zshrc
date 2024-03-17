@@ -90,7 +90,10 @@ source $HOME/.config/kube_aliases.sh
 source <(atuin gen-completions --shell zsh)
 source <(helm completion zsh)
 source <(restic generate --zsh-completion /dev/stdout --quiet)
-source /home/gunners/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh # [https://github.com/tomnomnom/gf]
+
+if [[ -r "$HOME/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh" ]]; then
+	source $HOME/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh # [https://github.com/tomnomnom/gf]
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

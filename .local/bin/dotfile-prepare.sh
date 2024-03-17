@@ -15,6 +15,7 @@ list=(
   "$home/.local/bin/transmission-add-torrent"
   "$home/.local/bin/list-songs"
   "$home/.local/bin/my-github-repo-opener"
+  "$home/.local/bin/monitor-setup"
 
   "$home/.local/share/applications/torrent.desktop"
   "$home/.local/share/restic-backup"

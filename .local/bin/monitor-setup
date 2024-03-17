@@ -1,0 +1,32 @@
+#!/bin/bash
+
+LAPTOP='eDP-1'
+HDMI='DP-3'
+
+set_primary_monitor() {
+  MON_ID=$(bspc query -M -m "$1")
+  MON_POS='^1'
+
+  [ $(bspc query -M -m "$MON_POS") != "$MON_ID" ] && bspc monitor "$MON_POS" -s "$MON_ID"
+
+  bspc subscribe monitor_swap | while read msg; do
+    [ $(bspc query -M -m "$MON_POS") != "$MON_ID" ] && bspc monitor "$MON_POS" -s "$MON_ID"
+  done
+}
+
+total_monitors=$(xrandr --query | grep '\bconnected\b' | wc -l)
+
+if [[ $total_monitors -eq 2 ]]; then
+  echo "Dual Monitor"
+  xrandr --output $HDMI --primary --mode 2560x1440 --rate 143.60
+  
+  xrandr --output $LAPTOP --right-of $HDMI --mode 1920x1080 --rate 60.00
+  # xrandr --output $LAPTOP --below $HDMI --mode 1920x1080 --rate 60.00
+  # xrandr --output $LAPTOP --off
+
+  set_primary_monitor $HDMI &
+else
+  echo "Laptop Monitor"
+  xrandr --output $LAPTOP --primary
+  xrandr --output $HDMI --off
+fi
