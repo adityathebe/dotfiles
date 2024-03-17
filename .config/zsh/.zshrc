@@ -10,30 +10,21 @@ fi
 export LANG="en_US.UTF-8"
 
 # Basic auto/table completion
-# autoload -U compinit && compinit
-# zstyle ':completion:*' menu select
-# zmodload zsh/complist
-#
-# # show hidden files during auto completion
-# _comp_options+=(globdots)
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+
+# show hidden files during auto completion
+_comp_options+=(globdots)
+
+bindkey '^E' end-of-line
 
 # Plugins
-plugins=(
-	colored-man-pages
-	history
-	systemd
-	vi-mode
-)
-
 source "$XDG_DATA_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme"
 source "$XDG_DATA_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$XDG_DATA_HOME/zsh/plugins/you-should-use/you-should-use.plugin.zsh"
 
-###############
-# ZSH configs #
-###############
-export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 export DISABLE_AUTO_UPDATE=true
 ENABLE_CORRECTION=false
 DISABLE_MAGIC_FUNCTIONS=true
@@ -80,7 +71,6 @@ unsetopt HIST_VERIFY
 #############
 # Sources
 #############
-source $ZSH/oh-my-zsh.sh
 source $HOME/.config/.aliases
 source $HOME/.config/hacking_aliases.sh
 source $HOME/.config/kube_aliases.sh
@@ -104,7 +94,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Flanksource 
-source $HOME/Projects/flanksource/local-setup/env.sh
+[[ ! -f $HOME/Projects/flanksource/local-setup/env.sh ]] || source $HOME/Projects/flanksource/local-setup/env.sh
 
 # Atuin
 eval "$(atuin init zsh --disable-up-arrow)"

@@ -5,6 +5,8 @@ alias df='df -h'
 alias downl='aria2c -c -x 8 -s 8'
 alias du='du -ch'
 alias ff='fastfetch'
+alias h='history'
+alias hs='history | rg'
 alias k15="killall -15"
 alias k9="killall -9"
 alias lg='ls -alF | rg -i'
@@ -21,6 +23,14 @@ alias rss="newsboat"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" # Inorder to avoid history file in $HOME
 alias xcp='xclip -selection clipboard'
 alias zzz='sudo systemctl suspend'
+
+# systemctl aliases
+alias sc-disable="systemctl disable"
+alias sc-enable="systemctl enable"
+alias sc-status="systemctl status"
+alias sc-start="systemctl start"
+alias sc-restart="systemctl restart"
+alias sc-stop="systemctl stop"
 
 # Enforce alias expansion.
 # 	A trailing space in VALUE causes the next word to be checked for alias 
