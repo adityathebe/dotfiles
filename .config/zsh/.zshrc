@@ -17,19 +17,18 @@ export LANG="en_US.UTF-8"
 # # show hidden files during auto completion
 # _comp_options+=(globdots)
 
-# Themes
-ZSH_THEME=powerlevel10k/powerlevel10k
-
 # Plugins
 plugins=(
 	colored-man-pages
-  zsh-syntax-highlighting
-  zsh-autosuggestions
 	history
 	systemd
 	vi-mode
-	you-should-use
 )
+
+source "$XDG_DATA_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme"
+source "$XDG_DATA_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$XDG_DATA_HOME/zsh/plugins/you-should-use/you-should-use.plugin.zsh"
 
 ###############
 # ZSH configs #
