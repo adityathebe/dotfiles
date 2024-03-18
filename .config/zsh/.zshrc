@@ -1,5 +1,3 @@
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -14,10 +12,12 @@ autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 
+# substring match
+zstyle ':completion:*' matcher-list 'r:|?=**'
+
 # show hidden files during auto completion
 _comp_options+=(globdots)
 
-bindkey '^E' end-of-line
 
 # Plugins
 source "$XDG_DATA_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme"
@@ -93,6 +93,8 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
+bindkey '^E' end-of-line
+
 # Flanksource 
 [[ ! -f $HOME/Projects/flanksource/local-setup/env.sh ]] || source $HOME/Projects/flanksource/local-setup/env.sh
 
@@ -105,7 +107,7 @@ eval "$(direnv hook zsh)"
 # Zoxide
 eval "$(zoxide init zsh)"
 
-if [ "$TERM_PROGRAM" != "vscode" ]; then
-	fastfetch
+if [[ "$TERM_PROGRAM" != "vscode" && -z "$TMUX" ]]; then
+    fastfetch
 fi
 
