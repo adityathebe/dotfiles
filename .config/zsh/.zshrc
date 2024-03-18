@@ -5,29 +5,43 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export LANG="en_US.UTF-8"
+# Emacs binding
+bindkey -e
+
+ENABLE_CORRECTION=false
 
 # Basic auto/table completion
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 
-# substring match
-zstyle ':completion:*' matcher-list 'r:|?=**'
+# Better completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # show hidden files during auto completion
 _comp_options+=(globdots)
 
+######################
+# Keybindings
+# Credit: https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/key-bindings.zsh
+######################
 
-# Plugins
-source "$XDG_DATA_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme"
-source "$XDG_DATA_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$XDG_DATA_HOME/zsh/plugins/you-should-use/you-should-use.plugin.zsh"
+# make search up and down work, so partially type and hit up/down to find relevant stuff
+bindkey '^[[A' up-line-or-search                                                
+bindkey '^[[B' down-line-or-search
 
-export DISABLE_AUTO_UPDATE=true
-ENABLE_CORRECTION=false
-DISABLE_MAGIC_FUNCTIONS=true
+# [Ctrl-RightArrow] - move forward one word
+bindkey -M emacs '^[[1;5C' forward-word
+bindkey -M viins '^[[1;5C' forward-word
+bindkey -M vicmd '^[[1;5C' forward-word
+
+# [Ctrl-LeftArrow] - move backward one word
+bindkey -M emacs '^[[1;5D' backward-word
+bindkey -M viins '^[[1;5D' backward-word
+bindkey -M vicmd '^[[1;5D' backward-word
+
+# [Delete] - delete forward
+bindkey -M emacs "^[[3~" delete-char
 
 ##########
 # HISTORY
@@ -75,6 +89,14 @@ source $HOME/.config/.aliases
 source $HOME/.config/hacking_aliases.sh
 source $HOME/.config/kube_aliases.sh
 
+#############
+# Plugins
+#############
+source "$XDG_DATA_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme"
+source "$XDG_DATA_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$XDG_DATA_HOME/zsh/plugins/you-should-use/you-should-use.plugin.zsh"
+
 ## Auto completitions
 source <(atuin gen-completions --shell zsh)
 source <(helm completion zsh)
@@ -106,8 +128,3 @@ eval "$(direnv hook zsh)"
 
 # Zoxide
 eval "$(zoxide init zsh)"
-
-if [[ "$TERM_PROGRAM" != "vscode" && -z "$TMUX" ]]; then
-    fastfetch
-fi
-
