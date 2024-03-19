@@ -25,12 +25,12 @@ alias xcp='xclip -selection clipboard'
 alias zzz='sudo systemctl suspend'
 
 # systemctl aliases
-alias sc-disable="systemctl disable"
-alias sc-enable="systemctl enable"
+alias sc-disable="sudo systemctl disable"
+alias sc-enable="sudo systemctl enable"
 alias sc-status="systemctl status"
-alias sc-start="systemctl start"
-alias sc-restart="systemctl restart"
-alias sc-stop="systemctl stop"
+alias sc-start="sudo systemctl start"
+alias sc-restart="sudo systemctl restart"
+alias sc-stop="sudo systemctl stop"
 
 # Enforce alias expansion.
 # 	A trailing space in VALUE causes the next word to be checked for alias 

@@ -10,15 +10,13 @@ list=(
   "$home/.zshenv"
   "$home/.github"
 
-  "$home/.local/bin/dotfile-prepare.sh"
+  "$home/.local/bin/scripts/dotfile-stage"
   "$home/.local/bin/statusbar"
-  "$home/.local/bin/transmission-add-torrent"
-  "$home/.local/bin/list-songs"
-  "$home/.local/bin/my-github-repo-opener"
-  "$home/.local/bin/monitor-setup"
+  "$home/.local/bin/scripts/transmission-add-torrent"
+  "$home/.local/bin/scripts/list-songs"
+  "$home/.local/bin/scripts/monitor-setup"
 
   "$home/.local/share/applications/torrent.desktop"
-  "$home/.local/share/restic-backup"
   "$home/.local/share/restic-backup"
   
   "$home/.config/.aliases"

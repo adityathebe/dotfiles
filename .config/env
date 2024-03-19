@@ -27,6 +27,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 export PATH="$PATH:/opt/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin/scripts"
 export PATH="$PATH:$HOME/hacking/tools/bin"
 export PATH="$PATH:$HOME/.local/bin/statusbar"
 export PATH="$PATH:$HOME/Softwares/Java/apache-maven-3.6.3/bin/"

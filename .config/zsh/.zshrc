@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Required by tmux to load unicode
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Emacs binding
 bindkey -e
 
@@ -42,6 +46,10 @@ bindkey -M vicmd '^[[1;5D' backward-word
 
 # [Delete] - delete forward
 bindkey -M emacs "^[[3~" delete-char
+
+# Bind Home/End keys
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
 
 ##########
 # HISTORY
