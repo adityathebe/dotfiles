@@ -1,0 +1,17 @@
+#!/bin/env bash
+
+if [[ $1 == "u" ]]; then
+  umount /mnt/truenas
+  umount /mnt/portainer
+  umount /mnt/nixos-projects
+  exit 0
+fi;
+
+mkdir -p /mnt/truenas/
+sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3 truenas:/mnt/mega /mnt/truenas
+
+mkdir -p /mnt/portainer
+sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3 portainer:/mnt/hdd /mnt/portainer
+
+mkdir -p /mnt/nixos-projects
+sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3 nixos:/home/aditya/projects /mnt/nixos-projects

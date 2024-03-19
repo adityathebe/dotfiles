@@ -11,10 +11,13 @@ list=(
   "$home/.github"
 
   "$home/.local/bin/scripts/dotfile-stage"
-  "$home/.local/bin/statusbar"
-  "$home/.local/bin/scripts/transmission-add-torrent"
+  "$home/.local/bin/scripts/emoji-selector"
   "$home/.local/bin/scripts/list-songs"
   "$home/.local/bin/scripts/monitor-setup"
+  "$home/.local/bin/scripts/mount-external"
+  "$home/.local/bin/scripts/transmission-add-torrent"
+
+  "$home/.local/bin/statusbar"
 
   "$home/.local/share/applications/torrent.desktop"
   "$home/.local/share/restic-backup"
