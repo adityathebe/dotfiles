@@ -21,6 +21,7 @@ list=(
 
   "$home/.local/share/applications/torrent.desktop"
   "$home/.local/share/restic-backup"
+  "$home/.local/share/unicode"
   
   "$home/.config/.aliases"
   "$home/.config/Code/User/profiles/-756faeda/settings.json"
@@ -54,6 +55,7 @@ list=(
   "$home/.config/sxhkd/sxhkdrc"
   "$home/.config/tmux/tmux.conf"
   "$home/.config/transmission-daemon/settings.json"
+  "$home/.config/wallpaper.png"
   "$home/.config/wget/wgetrc"
   "$home/.config/zathura/zathurarc"
 
