@@ -126,7 +126,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey '^E' end-of-line
 
 # Flanksource 
-[[ ! -f $HOME/Projects/flanksource/local-setup/env.sh ]] || source $HOME/Projects/flanksource/local-setup/env.sh
+[[ ! -f $PROJECTS_HOME/flanksource/local-setup/env.sh ]] || source $PROJECTS_HOME/flanksource/local-setup/env.sh
 
 # Atuin
 eval "$(atuin init zsh --disable-up-arrow)"
