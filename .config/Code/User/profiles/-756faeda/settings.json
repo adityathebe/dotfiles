@@ -156,7 +156,6 @@
     "helm": true,
     "mdx": true
   },
-  "workbench.iconTheme": "vscode-icons",
   "cSpell.languageSettings": [
 
   ],

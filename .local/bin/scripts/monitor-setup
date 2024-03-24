@@ -1,7 +1,7 @@
 #!/bin/bash
 
-LAPTOP='eDP-1'
-HDMI='DP-3'
+LAPTOP='eDP1'
+HDMI='DP3'
 
 set_primary_monitor() {
   MON_ID=$(bspc query -M -m "$1")
