@@ -29,7 +29,7 @@ XF86AudioMute
 
 # Change sound sink
 super + alt + shift + m
-	/usr/local/bin/cycle_audio_output.sh -n
+	cycle_audio_output -n
 
 # Volume
 super + alt + {j, k}

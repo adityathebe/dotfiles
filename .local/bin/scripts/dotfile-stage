@@ -11,6 +11,7 @@ list=(
   "$home/.github"
 
   "$home/.local/bin/scripts/dotfile-stage"
+  "$home/.local/bin/scripts/cycle_audio_output"
   "$home/.local/bin/scripts/emoji-selector"
   "$home/.local/bin/scripts/list-songs"
   "$home/.local/bin/scripts/monitor-setup"
