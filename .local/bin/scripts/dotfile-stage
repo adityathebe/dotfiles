@@ -25,6 +25,7 @@ list=(
   "$home/.local/share/unicode"
   
   "$home/.config/.aliases"
+  "$home/.config/redshift.conf"
   "$home/.config/Code/User/profiles/-756faeda/settings.json"
   "$home/.config/alacritty/alacritty.toml"
   "$home/.config/atuin/config.toml"
