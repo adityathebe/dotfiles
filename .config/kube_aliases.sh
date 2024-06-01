@@ -5,6 +5,16 @@ alias kgd='kubectl get deployments'
 alias kgy='kubectl get -o yaml'
 alias kgpw='kubectl get pods -o wide'
 
+# Get events
+kge() {
+  kubectl get event --field-selector involvedObject.name=$1
+}
+
+# Tail events
+kgew() {
+  kubectl get event --watch --field-selector involvedObject.name=$1
+}
+
 # Get a base64 decoded secret
 ksec() {
   kubectl get secret $1 -o json | jq '.data | map_values(@base64d)'

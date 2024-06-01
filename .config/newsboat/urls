@@ -37,9 +37,16 @@ https://medium.com/feed/@matryer "~Matt Ryer"
 https://eli.thegreenplace.net/feeds/all.atom.xml "~Eli Bendersky @google"
 https://blog.questionable.services/atom.xml "~Matt Silverlock | @google"
 https://cprss.s3.amazonaws.com/golangweekly.com.xml "~Golang Weekly"
+https://www.golangprojects.com/rss.xml
+https://benhoyt.com/writings/rss.xml
 #########################################################################
 
-https://xeiaso.net/blog.rss "~Xeiaso [Nix | Go | Linux]"
+## Postgres
+https://brandur.org/articles.atom "RiverQueue"
+https://stormatics.tech/feed "~Stormatic's | Postgres"
+https://www.crunchydata.com/blog/rss.xml "~Crunchydata"
+
+https://rss.beehiiv.com/feeds/nczRb4PQ6t.xml "~quastor.org"
 https://registerspill.thorstenball.com/feed
 https://architecturenotes.co/rss/ "~Architecture Notes"
 https://robertheaton.com/feed.xml "~Robert Heaton | Privacy Guy"

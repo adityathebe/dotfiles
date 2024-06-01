@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -6,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Required by tmux to load unicode
-export LC_ALL=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Emacs binding
@@ -109,6 +111,7 @@ source "$XDG_DATA_HOME/zsh/plugins/you-should-use/you-should-use.plugin.zsh"
 source <(atuin gen-completions --shell zsh)
 source <(helm completion zsh)
 source <(restic generate --zsh-completion /dev/stdout --quiet)
+source <(gh completion -s zsh)
 
 if [[ -r "$HOME/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh" ]]; then
 	source $HOME/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh # [https://github.com/tomnomnom/gf]
@@ -136,3 +139,5 @@ eval "$(direnv hook zsh)"
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# zprof

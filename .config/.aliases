@@ -50,6 +50,7 @@ alias gca='git commit --amend'
 alias gco='git checkout'
 alias grh='git reset --hard'
 alias gu='git reset HEAD' # unstage a file
+alias gs='git switch'
 alias gfp='git fetch --prune'
 
 # Edit commonly updated configs
@@ -84,7 +85,7 @@ alias urlencode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul
 alias urldecode='python -c "import sys, urllib.parse as ul; [sys.stdout.write(ul.unquote_plus(l)) for l in sys.stdin]"'
 
 # Copy the img in the X clipboard to a file
-alias cpimg='xclip -selection clipboard -t image/png -o >'
+alias cpimg='xclip -selection clipboard -t image/png -o'
 
 # Sops easy encrypt/decrypt
 alias sopse='sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)")'
