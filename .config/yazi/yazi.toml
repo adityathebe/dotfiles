@@ -1,4 +1,12 @@
 [manager]
-sort_by = "created"
+ratio = [1, 4, 3]
+sort_by = "alphabetical"
+sort_sensitive = false
 sort_dir_first = true
 linemode = "size"
+show_symlink = true
+
+[opener]
+edit = [
+  { exec = '$EDITOR "$@"', block = true, for = "unix"}
+]

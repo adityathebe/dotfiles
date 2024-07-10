@@ -124,3 +124,7 @@ chaos_projectdiscovery() {
     jq -crM '.subdomains | . []' |
     sed -e "s/$/.$1/"
 }
+
+if [[ -r "$HOME/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh" ]]; then
+	source $HOME/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh # [https://github.com/tomnomnom/gf]
+fi
