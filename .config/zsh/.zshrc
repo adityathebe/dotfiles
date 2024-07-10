@@ -7,6 +7,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
 # Required by tmux to load unicode
 # export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -14,18 +17,30 @@ export LANG=en_US.UTF-8
 # Emacs binding
 bindkey -e
 
-ENABLE_CORRECTION=false
-
-# Basic auto/table completion
+#######################
+## Auto-completion
+# Enable Zsh's advanced auto-completion system
 autoload -Uz compinit && compinit
+
+# do not autoselect the first completion entry
+unsetopt menu_complete 
+
+# Use a menu for completion selection
 zstyle ':completion:*' menu select
+
+# Load the zsh/complist module for extended completion listing
 zmodload zsh/complist
 
-# Better completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# Better completion from ohmyzsh
+# Source: https://github.com/ohmyzsh/ohmyzsh/blob/5b37e218e5275c11cb5fecc61f943e6cea3e64bf/lib/completion.zsh#L23C5-L24C1
+# • 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}': Enables case-insensitive matching
+# • 'r:|=*': Allows partial-word completion from right to left
+# • 'l:|=* r:|=*': Allows partial-word completion from both left and right
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
 
 # show hidden files during auto completion
 _comp_options+=(globdots)
+#######################
 
 ######################
 # Keybindings
@@ -92,6 +107,7 @@ setopt SHARE_HISTORY
 # Execute commands using history (e.g.: using !$) immediatel:
 unsetopt HIST_VERIFY
 
+
 #############
 # Sources
 #############
@@ -108,17 +124,11 @@ source "$XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
 source "$XDG_DATA_HOME/zsh/plugins/you-should-use/you-should-use.plugin.zsh"
 
 ## Auto completitions
+source <(fzf --zsh)
 source <(atuin gen-completions --shell zsh)
 source <(helm completion zsh)
 source <(restic generate --zsh-completion /dev/stdout --quiet)
 source <(gh completion -s zsh)
-
-if [[ -r "$HOME/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh" ]]; then
-	source $HOME/.local/share/go/src/github.com/tomnomnom/gf/gf-completion.zsh # [https://github.com/tomnomnom/gf]
-fi
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # use the vi navigation keys in menu completion
 bindkey -M menuselect 'h' vi-backward-char
