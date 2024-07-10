@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-[ -f "$HOME/.config/env" ] && source "$HOME/.config/env"
-
 # Map CAPS to CTRL
 setxkbmap -option ctrl:ctrl_modifier
 
@@ -18,7 +16,10 @@ xsetroot -cursor_name left_ptr &
 # b off: Turns off the bell
 # r rate: Set the keyboard auto repeat rate and delay
 # 500 30: The values for the auto repeat rate (characters per second) and delay (milliseconds).
-xset dpms 0 0 0 b off r rate 250 50
+xset dpms 0 0 0 b off r rate 200 60
+
+# Set 2k res, 165Hz on the DP
+xrandr --output 'DP-4' --mode 2560x1440 --rate 164.83
 
 # Screensaver
 xset s 0
@@ -29,7 +30,7 @@ flameshot &
 picom --config ~/.config/picom/picom.conf &
 pasystray &
 redshift-gtk &
-blueman-applet &
+# blueman-applet &
 nm-applet &
 numlockx &
 
