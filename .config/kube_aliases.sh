@@ -1,9 +1,20 @@
 alias k="kubectl"
 alias kg='kubectl get'
-alias kgp='kubectl get pods'
+alias kgp='kubectl get pods --sort-by=.metadata.namespace'
 alias kgd='kubectl get deployments'
 alias kgy='kubectl get -o yaml'
 alias kgpw='kubectl get pods -o wide'
+alias keti='kubectl exec -it'
+
+# List all pods with the resources
+kgpr() {
+  kubectl get pods "$@" -o custom-columns='NAME:.metadata.name,MEMORY_REQUEST:.spec.containers[*].resources.requests.memory,MEMORY_LIMIT:.spec.containers[*].resources.limits.memory,CPU_REQUEST:.spec.containers[*].resources.requests.cpu,CPU_LIMIT:.spec.containers[*].resources.limits.cpu' --sort-by='.spec.containers[*].resources.limits.memory'
+}
+
+# List all pods and the container
+kgpc() {
+  kubectl get pods "$@" -o custom-columns='NAME:metadata.name,CONTAINERS:spec.containers[*].name' | sed 's/,*$//' | column -t
+}
 
 # Get events
 kge() {
