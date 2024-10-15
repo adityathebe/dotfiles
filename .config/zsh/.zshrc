@@ -20,7 +20,8 @@ bindkey -e
 #######################
 ## Auto-completion
 # Enable Zsh's advanced auto-completion system
-autoload -Uz compinit && compinit
+
+autoload -Uz compinit && compinit -C
 
 # do not autoselect the first completion entry
 unsetopt menu_complete 
@@ -39,7 +40,7 @@ zmodload zsh/complist
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
 
 # show hidden files during auto completion
-_comp_options+=(globdots)
+# _comp_options+=(globdots)
 #######################
 
 ######################
@@ -123,13 +124,6 @@ source "$XDG_DATA_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$XDG_DATA_HOME/zsh/plugins/you-should-use/you-should-use.plugin.zsh"
 
-## Auto completitions
-source <(fzf --zsh)
-source <(atuin gen-completions --shell zsh)
-source <(helm completion zsh)
-source <(restic generate --zsh-completion /dev/stdout --quiet)
-source <(gh completion -s zsh)
-
 # use the vi navigation keys in menu completion
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -141,13 +135,16 @@ bindkey '^E' end-of-line
 # Flanksource 
 [[ ! -f $PROJECTS_HOME/flanksource/local-setup/env.sh ]] || source $PROJECTS_HOME/flanksource/local-setup/env.sh
 
-# Atuin
+# Auto completitions
+source <(fzf --zsh)
+source <(atuin gen-completions --shell zsh)
+source <(helm completion zsh)
+source <(restic generate --zsh-completion /dev/stdout --quiet)
+source <(gh completion -s zsh)
+
+## Shell integrations
 eval "$(atuin init zsh --disable-up-arrow)"
-
-# Direnv
 eval "$(direnv hook zsh)"
-
-# Zoxide
 eval "$(zoxide init zsh)"
 
 # zprof

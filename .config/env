@@ -40,9 +40,7 @@ export TERMINAL="alacritty"
 export GIT_EDITOR="nvim"
 export EDITOR="nvim"
 export BROWSER="brave" # CLIs use this (eg: Newsboat)
-
-# I have a project dir for everything code related
-export PROJECTS_HOME="$HOME/Projects"
+export PROJECTS_HOME="$HOME/projects"
 
 ########################
 # APPLICATION SPECIFIC #

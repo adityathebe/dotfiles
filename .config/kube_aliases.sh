@@ -1,9 +1,9 @@
 alias k="kubectl"
 alias kg='kubectl get'
-alias kgp='kubectl get pods --sort-by=.metadata.namespace'
+alias kgp='kubectl get pods --sort-by="{.metadata.name}"'
+alias kgpw='kubectl get pods -o wide --sort-by="{.metadata.name}"'
 alias kgd='kubectl get deployments'
 alias kgy='kubectl get -o yaml'
-alias kgpw='kubectl get pods -o wide'
 alias keti='kubectl exec -it'
 
 # List all pods with the resources
@@ -35,5 +35,5 @@ klogd() {
 	kubectl get pods | grep $1 | grep -i running | cut -d ' ' -f 1 | xargs -n 1 -P 2 kubectl logs -f --tail=200
 }
 
-# flux auto completion
+# auto completions
 . <(flux completion zsh)

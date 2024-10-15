@@ -20,6 +20,7 @@ alias pac_cache_size='du -sh /var/cache/pacman/pkg/'
 alias qrgen=' qrencode -t ANSI'
 alias rm="rm -v"
 alias rss="newsboat"
+alias tf="terraform"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" # Inorder to avoid history file in $HOME
 alias xcp='xclip -selection clipboard'
 alias zzz='sudo systemctl suspend'
@@ -47,11 +48,15 @@ alias vim="nvim"
 alias cdr='cd $(git rev-parse --show-toplevel)' # jumps to the root path of a git repository
 alias gb='git branch'
 alias gca='git commit --amend'
+alias gsu='git stash -u'
+alias gsp='git stash pop'
 alias gco='git checkout'
 alias grh='git reset --hard'
 alias gu='git reset HEAD' # unstage a file
 alias gs='git switch'
 alias gfp='git fetch --prune'
+alias gap='git add -p'
+alias gds='git diff --staged'
 
 # Edit commonly updated configs
 alias aliases='vim ~/.config/.aliases'
@@ -91,6 +96,14 @@ alias cpimg='xclip -selection clipboard -t image/png -o'
 alias sopse='sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)")'
 alias sopsd='sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)")'
 
+alias videoexif='exiftool -s -s -s -FileType -CompressorID -AudioFormat'
+
+video_info() {
+  echo "File Container: $(file -b --mime-type "$1")" && \
+  echo "Video Codec: $(ffprobe -v quiet -select_streams v:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 "$1")" && \
+  echo "Audio Codec: $(ffprobe -v quiet -select_streams a:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 "$1")"
+}
+
 # Define directory shortcuts with hash -d so you can use 
 # cd ~x and vim ~x/file instead of cd /very/long/and/often/accessed/path. 
 # hash -d P=$HOME/Projects
@@ -112,4 +125,8 @@ add_album_art() {
 # portpid lists all the processes running on the given port
 portpid() {
 	sudo lsof -n -i :$1 | grep -i 'Listen'
+}
+
+yttrim() {
+	yt-dlp "$2" --download-sections "*$1" -S 'proto:https' -o "video_clip_${1// /_}.%(ext)s"
 }
