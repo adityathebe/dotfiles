@@ -27,6 +27,12 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pulsemixer --toggle-mute
 
+XF86AudioPlay
+	pulsemixer --change-volume -5
+
+XF86AudioPause
+	pulsemixer --change-volume -5
+
 # Change sound sink
 super + alt + shift + m
 	cycle_audio_output -n
