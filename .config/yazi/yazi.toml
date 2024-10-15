@@ -10,3 +10,12 @@ show_symlink = true
 edit = [
   { run = '$EDITOR "$@"', block = true, for = "unix"}
 ]
+
+# so when browsing a network mounted directory,
+# yazi doesn't fetch the entire file to evaluate the mime-type.
+[[plugin.prepend_fetchers]]
+id   = "mime"
+if   = "!mime"
+name = "*"
+run  = "mime-ext"
+prio = "high"
