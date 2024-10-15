@@ -8,5 +8,5 @@ show_symlink = true
 
 [opener]
 edit = [
-  { exec = '$EDITOR "$@"', block = true, for = "unix"}
+  { run = '$EDITOR "$@"', block = true, for = "unix"}
 ]

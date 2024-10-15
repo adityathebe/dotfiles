@@ -20,9 +20,9 @@
 # Whether to set CPU% on a process to be based on the total CPU or per-core CPU% (not divided by the number of cpus).
 #unnormalized_cpu = false
 # Whether to group processes with the same name together by default.
-#group_processes = false
+group_processes = true
 # Whether to make process searching case sensitive by default.
-#case_sensitive = false
+case_sensitive = true
 # Whether to make process searching look for matching the entire word by default.
 #whole_word = false
 # Whether to make process searching use regex by default.
@@ -56,9 +56,9 @@
 # Disable mouse clicks
 #disable_click = false
 # Built-in themes.  Valid values are "default", "default-light", "gruvbox", "gruvbox-light", "nord", "nord-light"
-#color = "default"
+color = "nord"
 # Show memory values in the processes widget as values by default
-#mem_as_value = false
+mem_as_value = true
 # Show tree mode by default in the processes widget.
 #tree = false
 # Shows an indicator in table widgets tracking where in the list you are.
@@ -74,7 +74,8 @@
 # Hides advanced options to stop a process on Unix-like systems.
 #disable_advanced_kill = false
 # Shows GPU(s) memory
-#enable_gpu_memory = false
+enable_gpu_memory = true
+enable_gpu = true
 # Shows cache and buffer memory
 #enable_cache_memory = false
 # How much data is stored at once in terms of time.
