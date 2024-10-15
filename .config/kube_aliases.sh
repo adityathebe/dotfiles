@@ -1,4 +1,5 @@
-alias k="kubectl"
+alias k='kubecolor'
+alias kubectl='kubecolor'
 alias kg='kubectl get'
 alias kgp='kubectl get pods --sort-by="{.metadata.name}"'
 alias kgpw='kubectl get pods -o wide --sort-by="{.metadata.name}"'
@@ -37,3 +38,6 @@ klogd() {
 
 # auto completions
 . <(flux completion zsh)
+
+# make completion work with kubecolor
+compdef kubecolor=kubectl
