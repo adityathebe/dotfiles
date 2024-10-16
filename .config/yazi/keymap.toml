@@ -1,12 +1,22 @@
 [manager]
-
 append_keymap = [
   { on = [ "g", "m" ], run = "cd /mnt/portainer/media/movies/", desc = "Go to movies directory" },
   { on = [ "c", "d" ], run = "cd --interactive", desc = "Go to a directory interactively" },
   { on = [ "<C-c>" ],  run = "escape",         desc = "Go back the normal mode, or cancel input" },
 ]
 
+[[manager.prepend_keymap]]
+on   = "!"
+run  = 'shell "$SHELL" --block --confirm'
+desc = "Open shell here"
+
+[[manager.prepend_keymap]]
+on   = "l"
+run  = "plugin --sync smart-enter"
+desc = "Enter the child directory, or open the file"
+
 [input]
 append_keymap = [
   { on = [ "<C-c>" ],  run = "escape",         desc = "Go back the normal mode, or cancel input" },
 ]
+
