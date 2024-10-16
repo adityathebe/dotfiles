@@ -2,26 +2,22 @@
 
 set -e
 
-home='/home/gunners'
+home=$HOME
 dotfile="/usr/bin/git --git-dir=$home/.dotfilesGitBareRepo --work-tree=$home"
 list=(
   "$home/.xinitrc"
-  "$home/.xprofile"
-  "$home/.zshenv"
+  "$home/.zprofile"
   "$home/.github"
 
   "$home/.local/bin/scripts/dotfile-stage"
   "$home/.local/bin/scripts/cycle_audio_output"
   "$home/.local/bin/scripts/emoji-selector"
-  "$home/.local/bin/scripts/list-songs"
   "$home/.local/bin/scripts/monitor-setup"
   "$home/.local/bin/scripts/mount-external"
-  "$home/.local/bin/scripts/transmission-add-torrent"
 
   "$home/.local/bin/statusbar"
 
-  "$home/.local/share/applications/torrent.desktop"
-  "$home/.local/share/restic-backup"
+  # "$home/.local/share/restic-backup"
   "$home/.local/share/unicode"
   
   "$home/.config/.aliases"
@@ -41,13 +37,8 @@ list=(
   "$home/.config/git/config"
   "$home/.config/hacking_aliases.sh"
   "$home/.config/kube_aliases.sh"
-  "$home/.config/mpd/mpd.conf"
   "$home/.config/mpv/input.conf"
   "$home/.config/mpv/mpv.conf"
-  "$home/.config/ncmpcpp/bindings"
-  "$home/.config/ncmpcpp/config"
-  "$home/.config/newsboat/config"
-  "$home/.config/newsboat/urls"
   "$home/.config/picom/picom.conf"
   "$home/.config/polybar/config.ini"
   "$home/.config/polybar/polybar_launch.sh"
@@ -56,13 +47,10 @@ list=(
   "$home/.config/sxhkd/sxhkdrc"
   "$home/.config/sxhkd/sxhkdrc"
   "$home/.config/tmux/tmux.conf"
-  "$home/.config/transmission-daemon/settings.json"
   "$home/.config/wallpaper.png"
   "$home/.config/wget/wgetrc"
-  "$home/.config/zathura/zathurarc"
 
   # zsh
-  "$home/.config/zsh/.zprofile"
   "$home/.config/zsh/.p10k.zsh"
   "$home/.config/zsh/.zshrc"
 

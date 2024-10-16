@@ -1,6 +1,5 @@
 {
   "breadcrumbs.enabled": true,
-  "cSpell.userWords": ["flanksource", "gitops", "plpgsql", "shoutrrr"],
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.fontFamily": "JetBrains Mono, Fira Code",
@@ -34,7 +33,6 @@
   "prettier.printWidth": 100,
   "prettier.singleQuote": true,
   "redhat.telemetry.enabled": true,
-  "sql-formatter.dialect": "postgresql",
   "sql-formatter.uppercase": true,
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.enablePersistentSessions": false,
@@ -42,25 +40,12 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": "normal",
   "typescript.format.enable": false,
-  "window.zoomLevel": 1,
   "workbench.colorTheme": "Nord",
   "workbench.preferredDarkColorTheme": "Visual Studio Light",
   "workbench.preferredHighContrastColorTheme": "Visual Studio Light",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
-  "cSpell.enabledLanguageIds": [
-    "asciidoc",
-    "graphql",
-    "markdown",
-    "handlebars",
-    "haskell",
-    "html",
-    "json",
-    "text",
-    "yaml",
-    "yml"
-  ],
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
@@ -134,10 +119,11 @@
     "editor.defaultFormatter": "fredwangwang.vscode-hcl-format"
   },
   "vs-kubernetes": {
-    "vs-kubernetes.crd-code-completion": "enabled"
+    "vs-kubernetes.crd-code-completion": "enabled",
+    "disable-linters": ["resource-limits"]
   },
   "[mdx]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
   },
   "editor.inlineSuggest.fontFamily": "JetBrains Mono, Fira Code",
   "debug.console.fontFamily": "JetBrains Mono, Fira Code",
@@ -145,21 +131,18 @@
   "notebook.output.fontFamily": "JetBrains Mono, Fira Code",
   "chat.editor.fontFamily": "JetBrains Mono, Fira Code",
   "prettier.semi": false,
-  "codeium.enableCodeLens": false,
-  "githd.logView.displayExpressStatus": false,
-  "githd.logView.expressMode": true,
-  "githd.blameView.enabled": false,
-  "codeium.enableConfig": {
-    "*": true,
-    "markdown": true,
-    "properties": true,
-    "helm": true,
-    "mdx": true
-  },
-  "cSpell.languageSettings": [
-
-  ],
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "window.zoomLevel": 1,
+  "[sql]": {
+    "editor.defaultFormatter": "arniu.sql-formatter-vscode"
+  },
+  "sql-formatter.dialect": "postgresql",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "cody.telemetry.level": "off",
+  "cody.autocomplete.advanced.provider": "anthropic",
+  "cody.autocomplete.advanced.model": "starcoder-16b"
 }
