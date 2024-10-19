@@ -52,10 +52,12 @@ alias gsu='git stash -u'
 alias gsp='git stash pop'
 alias gco='git checkout'
 alias grh='git reset --hard'
+alias gst='git status'
 alias gu='git reset HEAD' # unstage a file
 alias gs='git switch'
 alias gfp='git fetch --prune'
 alias gap='git add -p'
+alias gd='git diff'
 alias gds='git diff --staged'
 
 # Edit commonly updated configs
@@ -129,4 +131,25 @@ portpid() {
 
 yttrim() {
 	yt-dlp "$2" --download-sections "*$1" -S 'proto:https' -o "video_clip_${1// /_}.%(ext)s"
+}
+
+function trim_mp4() {
+    if [[ $# -ne 3 ]]; then
+        echo "Usage: trim_mp4 <input_file> <start_time> <end_time>"
+        echo "Times should be in the format HH:MM:SS or in seconds"
+        return 1
+    fi
+
+    local input_file=$1
+    local start_time=$2
+    local end_time=$3
+    local output_file="${input_file%.*}_trimmed.mp4"
+
+    ffmpeg -i "$input_file" -ss "$start_time" -to "$end_time" -c copy "$output_file"
+
+    if [[ $? -eq 0 ]]; then
+        echo "Trimmed video saved as $output_file"
+    else
+        echo "An error occurred while trimming the video"
+    fi
 }
