@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/themes/themes/nord.toml"]
+import = ["~/.config/alacritty/themes/themes/night_owl.toml"]
 live_config_reload = true
 # "window.dynamic_title" = true
 

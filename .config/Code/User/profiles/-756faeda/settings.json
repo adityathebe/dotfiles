@@ -40,7 +40,6 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": "normal",
   "typescript.format.enable": false,
-  "workbench.colorTheme": "Nord",
   "workbench.preferredDarkColorTheme": "Visual Studio Light",
   "workbench.preferredHighContrastColorTheme": "Visual Studio Light",
   "workbench.sideBar.location": "right",
@@ -144,5 +143,6 @@
   "gitlens.codeLens.enabled": false,
   "cody.telemetry.level": "off",
   "cody.autocomplete.advanced.provider": "anthropic",
-  "cody.autocomplete.advanced.model": "starcoder-16b"
+  "cody.autocomplete.advanced.model": "starcoder-16b",
+  "workbench.colorTheme": "Night Owl"
 }
