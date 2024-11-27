@@ -100,10 +100,15 @@ alias sopsd='sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public ke
 
 alias videoexif='exiftool -s -s -s -FileType -CompressorID -AudioFormat'
 
-video_info() {
-  echo "File Container: $(file -b --mime-type "$1")" && \
-  echo "Video Codec: $(ffprobe -v quiet -select_streams v:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 "$1")" && \
+
+video_info () {
+  echo "File Container: $(file -b --mime-type "$1")"
+  echo "Video Codec: $(ffprobe -v quiet -select_streams v:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 "$1")"
+  echo "Video Bit Depth: $(ffprobe -v quiet -select_streams v:0 -show_entries stream=bits_per_raw_sample -of default=noprint_wrappers=1:nokey=1 "$1")"
+  echo "Pixel Format: $(ffprobe -v quiet -select_streams v:0 -show_entries stream=pix_fmt -of default=noprint_wrappers=1:nokey=1 "$1")"
   echo "Audio Codec: $(ffprobe -v quiet -select_streams a:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 "$1")"
+  echo "FPS: $(ffprobe -v quiet -select_streams v:0 -show_entries stream=r_frame_rate -of default=noprint_wrappers=1:nokey=1 "$1" | awk -F'/' '{printf "%.2f", $1 / $2}')"
+  echo "Resolution: $(ffprobe -v quiet -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$1")"
 }
 
 # Define directory shortcuts with hash -d so you can use 

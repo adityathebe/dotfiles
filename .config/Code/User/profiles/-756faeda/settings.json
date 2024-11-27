@@ -42,7 +42,6 @@
   "typescript.format.enable": false,
   "workbench.preferredDarkColorTheme": "Visual Studio Light",
   "workbench.preferredHighContrastColorTheme": "Visual Studio Light",
-  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
   "files.exclude": {
@@ -144,5 +143,6 @@
   "cody.telemetry.level": "off",
   "cody.autocomplete.advanced.provider": "anthropic",
   "cody.autocomplete.advanced.model": "starcoder-16b",
-  "workbench.colorTheme": "Night Owl"
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  "workbench.sideBar.location": "right"
 }
