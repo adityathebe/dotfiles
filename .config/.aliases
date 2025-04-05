@@ -1,6 +1,7 @@
 #!/bin/env bash
 
 # Brevity
+alias ai='aichat'
 alias df='df -h'
 alias downl='aria2c -c -x 8 -s 8'
 alias du='du -ch'
@@ -52,7 +53,7 @@ alias gsu='git stash -u'
 alias gsp='git stash pop'
 alias gco='git checkout'
 alias grh='git reset --hard'
-alias gst='git status'
+alias gst='git status -sb'
 alias gu='git reset HEAD' # unstage a file
 alias gs='git switch'
 alias gfp='git fetch --prune'

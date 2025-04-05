@@ -39,8 +39,6 @@ zmodload zsh/complist
 # • 'l:|=* r:|=*': Allows partial-word completion from both left and right
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
 
-# show hidden files during auto completion
-# _comp_options+=(globdots)
 #######################
 
 ######################
@@ -123,6 +121,7 @@ source "$XDG_DATA_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme"
 source "$XDG_DATA_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$XDG_DATA_HOME/zsh/plugins/you-should-use/you-should-use.plugin.zsh"
+# source /usr/share/nvm/init-nvm.sh
 
 # use the vi navigation keys in menu completion
 bindkey -M menuselect 'h' vi-backward-char
@@ -136,15 +135,16 @@ bindkey '^E' end-of-line
 [[ ! -f $PROJECTS_HOME/flanksource/local-setup/env.sh ]] || source $PROJECTS_HOME/flanksource/local-setup/env.sh
 
 # Auto completitions
-source <(fzf --zsh)
-source <(atuin gen-completions --shell zsh)
-source <(helm completion zsh)
-source <(restic generate --zsh-completion /dev/stdout --quiet)
-source <(gh completion -s zsh)
-
-## Shell integrations
+eval "$(fzf --zsh)"
+eval "$(atuin gen-completions --shell zsh)"
+eval "$(restic generate --zsh-completion /dev/stdout --quiet)"
+eval "$(gh completion -s zsh)"
+eval "$(jj util completion zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
 
-# zprof
+# date -u >> ~/zsh_profile_report
+# echo "\n\n" >> ~/zsh_profile_report
+# zprof >> ~/zsh_profile_report
+# echo "\n\n\n\n" >> ~/zsh_profile_report

@@ -37,7 +37,8 @@ klogd() {
 }
 
 # auto completions
-. <(flux completion zsh)
+eval "$(flux completion zsh)"
+eval "$(helm completion zsh)"
 
 # make completion work with kubecolor
 compdef kubecolor=kubectl

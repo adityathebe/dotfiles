@@ -31,16 +31,18 @@ export PATH="$PATH:$HOME/hacking/tools/bin"
 export PATH="$PATH:$HOME/.local/bin/statusbar"
 export PATH="$PATH:$HOME/Softwares/Java/apache-maven-3.6.3/bin/"
 export PATH="$PATH:$XDG_DATA_HOME/go/bin"
+export PATH="$PATH:$HOME/.nix-profile/bin"
 
 ########################
 # Default applications #
 ########################
 
-export TERMINAL="alacritty"
+export TERMINAL="ghostty"
 export GIT_EDITOR="nvim"
 export EDITOR="nvim"
 export BROWSER="brave" # CLIs use this (eg: Newsboat)
 export PROJECTS_HOME="$HOME/projects"
+export LESS="-XFR"
 
 ########################
 # APPLICATION SPECIFIC #

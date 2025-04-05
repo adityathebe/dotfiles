@@ -9,6 +9,8 @@
 	# show the top 10 most changed files in order
   changehist = !git log --numstat | awk '/^[0-9-]+/{ print $NF}' | sort | uniq -c | sort -nr | head -n 10
 
+  clean-gone = "!git branch -vv | rg '\\[.*gone.*\\]' | sed 's/^..//' | cut -d' ' -f1 | xargs -r git branch -D"
+
 [user]
 	email = contact@adityathebe.com
 	name = Aditya Thebe
@@ -21,6 +23,7 @@
 	# tell Git to convert CRLF to LF on commit but not the other way around
 	autocrlf = input
 	editor = vim
+	fscache = false
 	; pager = bat
 
 [branch]
