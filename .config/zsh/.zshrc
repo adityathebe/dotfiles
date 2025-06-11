@@ -73,8 +73,8 @@ bindkey  "^[[F"   end-of-line
 ##########
 
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
-export HISTSIZE=500000000
-export SAVEHIST=500000000
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 # Immediately append to history file:
 setopt INC_APPEND_HISTORY
@@ -134,15 +134,30 @@ bindkey '^E' end-of-line
 # Flanksource 
 [[ ! -f $PROJECTS_HOME/flanksource/local-setup/env.sh ]] || source $PROJECTS_HOME/flanksource/local-setup/env.sh
 
-# Auto completitions
-eval "$(fzf --zsh)"
-eval "$(atuin gen-completions --shell zsh)"
-eval "$(restic generate --zsh-completion /dev/stdout --quiet)"
-eval "$(gh completion -s zsh)"
-eval "$(jj util completion zsh)"
-eval "$(atuin init zsh --disable-up-arrow)"
-eval "$(direnv hook zsh)"
-eval "$(zoxide init zsh)"
+# Auto completitions (cached for performance, auto-generated if missing)
+_cache_dir="$HOME/.cache/zsh/completions"
+mkdir -p "$_cache_dir"
+
+# Cache or eval function
+_cache_or_eval() {
+    local cache_file="$1"
+    local command="$2"
+    if [[ ! -f "$cache_file" ]]; then
+        eval "$command" > "$cache_file" 2>/dev/null || eval "$command"
+    fi
+    source "$cache_file" 2>/dev/null || eval "$command"
+}
+
+_cache_or_eval "$_cache_dir/_fzf" 'fzf --zsh'
+_cache_or_eval "$_cache_dir/_atuin" 'atuin gen-completions --shell zsh'
+_cache_or_eval "$_cache_dir/_restic" 'restic generate --zsh-completion /dev/stdout --quiet'
+_cache_or_eval "$_cache_dir/_gh" 'gh completion -s zsh'
+_cache_or_eval "$_cache_dir/_jj" 'jj util completion zsh'
+_cache_or_eval "$_cache_dir/_atuin_init" 'atuin init zsh --disable-up-arrow'
+_cache_or_eval "$_cache_dir/_direnv_hook" 'direnv hook zsh'
+_cache_or_eval "$_cache_dir/_zoxide_init" 'zoxide init zsh'
+
+unset _cache_dir
 
 # date -u >> ~/zsh_profile_report
 # echo "\n\n" >> ~/zsh_profile_report
